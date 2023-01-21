@@ -4,18 +4,27 @@ import java.io.IOException;
 import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-public class ExampleController {
+public class Controller {
   @FXML Button ClickButton; // fx:ID of the button in the ExampleFXML
+  @FXML private Button featureOneButton;
+  @FXML private Button featureTwoButton;
+  @FXML private Button featureThreeButton;
+  @FXML private Button homeButton;
+
   private Connection connection = null; // connection to database
 
   /** Method run when controller is initializes */
   public void initialize() {
     // if connection is successful
-    if (this.connectToDB()) {
-      this.createTable();
-    }
+    //    if (this.connectToDB()) {
+    //      this.createTable();
+    //    }
   }
 
   /**
@@ -27,6 +36,62 @@ public class ExampleController {
   public void buttonClicked(ActionEvent actionEvent) throws IOException {
     System.out.println("Button was clicked");
     System.out.println(this.logData() ? "Data logged" : "Data NOT logged");
+  }
+
+  public void featureOneButtonClicked() throws IOException {
+    Stage stage = (Stage) featureOneButton.getScene().getWindow();
+    stage.close();
+    System.out.println("check");
+
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureOne.fxml"));
+    Parent root = loader.load();
+
+    Stage primaryStage = new Stage();
+    primaryStage.setScene(new Scene(root, 600, 600));
+    primaryStage.show();
+  }
+
+  public void featureTwoButtonClicked() throws IOException {
+    Stage stage = (Stage) featureTwoButton.getScene().getWindow();
+    stage.close();
+    System.out.println("check");
+
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureTwo.fxml"));
+    Parent root = loader.load();
+
+    Stage primaryStage = new Stage();
+    primaryStage.setScene(new Scene(root, 600, 600));
+    primaryStage.show();
+  }
+
+  public void featureThreeButtonClicked() throws IOException {
+    Stage stage = (Stage) featureThreeButton.getScene().getWindow();
+    stage.close();
+    System.out.println("check");
+
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureThree.fxml"));
+    Parent root = loader.load();
+
+    Stage primaryStage = new Stage();
+    primaryStage.setScene(new Scene(root, 600, 600));
+    primaryStage.show();
+  }
+
+  public void homeButtonClicked() throws IOException {
+    Stage stage = (Stage) homeButton.getScene().getWindow();
+    stage.close();
+    System.out.println("check");
+
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    Parent root = loader.load();
+
+    Stage primaryStage = new Stage();
+    primaryStage.setScene(new Scene(root, 600, 600));
+    primaryStage.show();
   }
 
   /**

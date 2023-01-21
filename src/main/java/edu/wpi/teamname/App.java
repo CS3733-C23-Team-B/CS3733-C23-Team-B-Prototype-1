@@ -19,11 +19,8 @@ public class App extends Application {
   @Override
   public void start(Stage primaryStage) throws IOException {
     System.out.println("check");
-    Parent root = FXMLLoader.load(getClass().getResource("views/ExampleFXML.fxml"));
-    Scene scene = new Scene(root, 1280, 800);
-
-    primaryStage.setScene(scene);
-    primaryStage.setMaximized(true);
+    Parent root = FXMLLoader.load(getClass().getResource("views/HomeScreen.fxml"));
+    primaryStage.setScene(new Scene(root, 600, 600));
     primaryStage.show();
   }
 
