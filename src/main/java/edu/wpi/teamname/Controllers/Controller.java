@@ -48,7 +48,7 @@ public class Controller {
   public void signInButtonClicked() throws IOException {
     Stage stage = (Stage) signInButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
     Parent root = loader.load();
     stage.setScene(new Scene(root, 600, 600));
     stage.show();
@@ -56,28 +56,28 @@ public class Controller {
 
   public void featureOneButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature1.fxml"));
+            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature1.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
+            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void featureThreeButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
+            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void homeButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
@@ -97,7 +97,7 @@ public class Controller {
 
     try {
       Class.forName(
-          "org.apache.derby.jdbc.ClientDriver"); // Check that proper driver is packaged for Apache
+              "org.apache.derby.jdbc.ClientDriver"); // Check that proper driver is packaged for Apache
       // Derby
     } catch (Exception e) {
       e.printStackTrace();
@@ -107,10 +107,10 @@ public class Controller {
     try {
       // create Connection at specified URL
       this.connection =
-          DriverManager.getConnection(
-              "jdbc:derby://localhost:1527/testDB;create=true",
-              "app",
-              "derbypass"); // This will change for each team as their DB is developed
+              DriverManager.getConnection(
+                      "jdbc:derby://localhost:1527/testDB;create=true",
+                      "app",
+                      "derbypass"); // This will change for each team as their DB is developed
       if (this.connection != null) {
         System.out.println("Connected to the database!");
       } else {
@@ -139,11 +139,11 @@ public class Controller {
 
     if (this.connection != null) {
       String createQuery =
-          "CREATE TABLE APP.buttonClicks("
-              + "id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), "
-              + "btn_name VARCHAR(50), "
-              + "time_stamp TIMESTAMP NOT NULL, "
-              + "PRIMARY KEY(id) )";
+              "CREATE TABLE APP.buttonClicks("
+                      + "id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), "
+                      + "btn_name VARCHAR(50), "
+                      + "time_stamp TIMESTAMP NOT NULL, "
+                      + "PRIMARY KEY(id) )";
       try {
         Statement statement = this.connection.createStatement();
         statement.execute(createQuery);
@@ -168,7 +168,7 @@ public class Controller {
   private boolean logData() {
     if (connection != null) {
       String writeQuery =
-          "INSERT INTO APP.buttonClicks(btn_name, time_stamp) VALUES ( 'ClickButton', CURRENT_TIMESTAMP ) ";
+              "INSERT INTO APP.buttonClicks(btn_name, time_stamp) VALUES ( 'ClickButton', CURRENT_TIMESTAMP ) ";
       try {
         Statement statement = this.connection.createStatement();
         statement.execute(writeQuery);
