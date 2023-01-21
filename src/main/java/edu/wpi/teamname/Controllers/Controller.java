@@ -1,13 +1,16 @@
 package edu.wpi.teamname.Controllers;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -17,6 +20,7 @@ public class Controller {
   @FXML private Button featureThreeButton;
   @FXML private Button homeButton;
   @FXML private Button exitButton;
+  @FXML private BorderPane border;
 
   private Connection connection = null; // connection to database
 
@@ -40,35 +44,31 @@ public class Controller {
   }
 
   public void featureOneButtonClicked() throws IOException {
-    Stage stage = (Stage) featureOneButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureOne.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature1.fxml"));
     Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
+    border.setCenter(root);
   }
 
   public void featureTwoButtonClicked() throws IOException {
-    Stage stage = (Stage) featureTwoButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureTwo.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
     Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
+    border.setCenter(root);
   }
 
   public void featureThreeButtonClicked() throws IOException {
-    Stage stage = (Stage) featureThreeButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureThree.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
     Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
+    border.setCenter(root);
   }
 
   public void homeButtonClicked() throws IOException {
-    Stage stage = (Stage) homeButton.getScene().getWindow();
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
+    border.setCenter(root);
   }
 
   public void exitButtonClicked() throws IOException {
