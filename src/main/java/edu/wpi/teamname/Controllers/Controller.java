@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -22,7 +21,6 @@ public class Controller {
   @FXML private Button homeButton;
   @FXML private Button exitButton;
   @FXML private BorderPane border;
-  @FXML private Button signInButton;
 
   private Connection connection = null; // connection to database
 
@@ -43,15 +41,6 @@ public class Controller {
   public void buttonClicked(ActionEvent actionEvent) throws IOException {
     System.out.println("Button was clicked");
     System.out.println(this.logData() ? "Data logged" : "Data NOT logged");
-  }
-
-  public void signInButtonClicked() throws IOException {
-    Stage stage = (Stage) signInButton.getScene().getWindow();
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
-    Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
-    stage.show();
   }
 
   public void featureOneButtonClicked() throws IOException {
