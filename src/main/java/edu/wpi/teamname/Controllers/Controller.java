@@ -40,58 +40,34 @@ public class Controller {
 
   public void featureOneButtonClicked() throws IOException {
     Stage stage = (Stage) featureOneButton.getScene().getWindow();
-    stage.close();
-    System.out.println("check");
-
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureOne.fxml"));
     Parent root = loader.load();
-
-    Stage primaryStage = new Stage();
-    primaryStage.setScene(new Scene(root, 600, 600));
-    primaryStage.show();
+    stage.setScene(new Scene(root, 600, 600));
   }
 
   public void featureTwoButtonClicked() throws IOException {
     Stage stage = (Stage) featureTwoButton.getScene().getWindow();
-    stage.close();
-    System.out.println("check");
-
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureTwo.fxml"));
     Parent root = loader.load();
-
-    Stage primaryStage = new Stage();
-    primaryStage.setScene(new Scene(root, 600, 600));
-    primaryStage.show();
+    stage.setScene(new Scene(root, 600, 600));
   }
 
   public void featureThreeButtonClicked() throws IOException {
     Stage stage = (Stage) featureThreeButton.getScene().getWindow();
-    stage.close();
-    System.out.println("check");
-
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/FeatureThree.fxml"));
     Parent root = loader.load();
-
-    Stage primaryStage = new Stage();
-    primaryStage.setScene(new Scene(root, 600, 600));
-    primaryStage.show();
+    stage.setScene(new Scene(root, 600, 600));
   }
 
   public void homeButtonClicked() throws IOException {
     Stage stage = (Stage) homeButton.getScene().getWindow();
-    stage.close();
-    System.out.println("check");
-
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
-
-    Stage primaryStage = new Stage();
-    primaryStage.setScene(new Scene(root, 600, 600));
-    primaryStage.show();
+    stage.setScene(new Scene(root, 600, 600));
   }
 
   /**
