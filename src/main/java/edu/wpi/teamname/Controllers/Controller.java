@@ -16,6 +16,7 @@ public class Controller {
   @FXML private Button featureTwoButton;
   @FXML private Button featureThreeButton;
   @FXML private Button homeButton;
+  @FXML private Button exitButton;
 
   private Connection connection = null; // connection to database
 
@@ -68,6 +69,11 @@ public class Controller {
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
     stage.setScene(new Scene(root, 600, 600));
+  }
+
+  public void exitButtonClicked() throws IOException {
+    Stage stage = (Stage) exitButton.getScene().getWindow();
+    stage.close();
   }
 
   /**
