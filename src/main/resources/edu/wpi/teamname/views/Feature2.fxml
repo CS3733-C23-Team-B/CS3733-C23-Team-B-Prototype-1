@@ -8,15 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<<<<<<< Updated upstream
-<Label prefHeight="111.0" prefWidth="280.0" text="Feature Two Implimentation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
-   <font>
-      <Font size="20.0" />
-   </font>
-</Label>
-=======
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <top>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sanitation Service Request" BorderPane.alignment="CENTER">
          <font>
@@ -73,4 +65,4 @@
       </VBox>
    </bottom>
 </BorderPane>
->>>>>>> Stashed changes
+
