@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="featureOneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
+<AnchorPane id="featureOneButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <children>
       <ToolBar prefHeight="71.0" prefWidth="600.0">
         <items>
@@ -12,11 +15,11 @@
             <Button id="featureOneButton" fx:id="featureOneButton" defaultButton="true" mnemonicParsing="false" text="Feature 1" textAlignment="CENTER" />
             <Button id="featureOneButton" fx:id="featureTwoButton" mnemonicParsing="false" onAction="#featureTwoButtonClicked" text="Feature 2" />
             <Button id="featureThreeButton" fx:id="featureThreeButton" mnemonicParsing="false" onAction="#featureThreeButtonClicked" text="Feature 3" />
-            <Label prefHeight="43.0" prefWidth="196.0" text="Feature One">
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="13.0" />
+            <Label alignment="CENTER_RIGHT" graphicTextGap="0.0" prefHeight="43.0" prefWidth="261.0" text="Feature One" textAlignment="RIGHT">
                <font>
                   <Font size="29.0" />
-               </font>
-            </Label>
+               </font></Label>
         </items>
       </ToolBar>
    </children>
