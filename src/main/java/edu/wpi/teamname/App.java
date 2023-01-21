@@ -21,6 +21,7 @@ public class App extends Application {
     System.out.println("check");
     Parent root = FXMLLoader.load(getClass().getResource("views/HomeScreen.fxml"));
     primaryStage.setScene(new Scene(root, 600, 600));
+    primaryStage.setTitle("Hospital Service");
     primaryStage.show();
   }
 

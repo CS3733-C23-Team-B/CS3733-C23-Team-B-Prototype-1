@@ -23,5 +23,10 @@
             </Label>
         </items>
       </ToolBar>
+      <Label layoutX="215.0" layoutY="187.0" prefHeight="111.0" prefWidth="280.0" text="Home Page Implimentation">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
