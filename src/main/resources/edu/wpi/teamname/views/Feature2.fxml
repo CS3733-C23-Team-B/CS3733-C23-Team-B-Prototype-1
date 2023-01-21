@@ -1,10 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
+<<<<<<< Updated upstream
 <Label prefHeight="111.0" prefWidth="280.0" text="Feature Two Implimentation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <font>
       <Font size="20.0" />
    </font>
 </Label>
+=======
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sanitation Service Request" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+   </top>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="524.0" prefWidth="583.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Information">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <MFXTextField prefHeight="50.0" prefWidth="147.0" />
+                  <MFXTextField prefHeight="50.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <MFXTextField prefHeight="50.0" prefWidth="147.0" />
+                  <MFXTextField prefHeight="50.0" prefWidth="135.0" />
+               </children>
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Request Information">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clean Up Location" />
+            <MFXTextField prefHeight="50.0" prefWidth="160.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Urgency" />
+            <ChoiceBox prefWidth="150.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of Clean Up" />
+            <ChoiceBox prefWidth="150.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area of Clean Up" />
+            <ChoiceBox prefWidth="150.0" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
+>>>>>>> Stashed changes
