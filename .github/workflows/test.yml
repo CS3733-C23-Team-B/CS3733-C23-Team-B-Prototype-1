@@ -12,7 +12,6 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: 8
-        java-package: jdk+fx
     - name: Run headless test
       uses: GabrielBB/xvfb-action@v1
       with:
