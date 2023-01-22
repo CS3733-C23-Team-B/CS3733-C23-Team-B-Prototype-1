@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane id="border" fx:id="border" prefHeight="701.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <top>
-      <ToolBar prefHeight="71.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <ToolBar id="toolbar" fx:id="toolbar" prefHeight="43.0" prefWidth="784.0" BorderPane.alignment="CENTER">
         <items>
-          <Button id="homeButton" fx:id="homeButton" defaultButton="true" mnemonicParsing="false" onAction="#homeButtonClicked" text="Home" textAlignment="CENTER" />
-            <Button id="featureOneButton" fx:id="featureOneButton" mnemonicParsing="false" onAction="#featureOneButtonClicked" text="Feature 1" textAlignment="CENTER" />
-            <Button id="featureOneButton" fx:id="featureTwoButton" mnemonicParsing="false" onAction="#featureTwoButtonClicked" text="Feature 2" />
-            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="13.0">
+          <Button id="homeButton" fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClicked" text="Home" textAlignment="CENTER" />
+            <Button id="featureOneButton" fx:id="featureOneButton" mnemonicParsing="false" onAction="#featureOneButtonClicked" text="Patient Transportation" textAlignment="CENTER" />
+            <Button id="featureOneButton" fx:id="featureTwoButton" mnemonicParsing="false" onAction="#featureTwoButtonClicked" text="Sanitation Services" />
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="298.0">
                <padding>
-                  <Insets left="30.0" right="250.0" />
+                  <Insets right="250.0" />
                </padding></Separator>
+            <Button id="exitButton" fx:id="exitButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit Application" textAlignment="RIGHT" />
         </items>
          <BorderPane.margin>
-            <Insets />
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </BorderPane.margin>
          <padding>
             <Insets left="30.0" />
          </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </ToolBar>
    </top>
-   <bottom>
-      <Button id="exitButton" fx:id="exitButton" alignment="TOP_CENTER" defaultButton="true" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit Application" textAlignment="RIGHT" BorderPane.alignment="TOP_CENTER">
-         <BorderPane.margin>
-            <Insets bottom="10.0" />
-         </BorderPane.margin></Button>
-   </bottom>
 </BorderPane>
