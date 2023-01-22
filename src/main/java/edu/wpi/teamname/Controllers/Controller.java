@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Controller {
+  @FXML Button ClickButton; // fx:ID of the button in the ExampleFXML
   @FXML private Button featureOneButton;
   @FXML private Button featureTwoButton;
   @FXML private Button homeButton;
@@ -29,6 +31,17 @@ public class Controller {
     //    if (this.connectToDB()) {
     //      this.createTable();
     //    }
+  }
+
+  /**
+   * When the button is clicked, the method will log the data in the terminal and database
+   *
+   * @param actionEvent event that triggered method
+   * @throws IOException
+   */
+  public void buttonClicked(ActionEvent actionEvent) throws IOException {
+    System.out.println("Button was clicked");
+    System.out.println(this.logData() ? "Data logged" : "Data NOT logged");
   }
 
   public void signInButtonClicked() throws IOException {
@@ -47,9 +60,6 @@ public class Controller {
 
     stage.setScene(scene);
     stage.show();
-    // sets the main stage to home after signing in
-    FXMLLoader loader2 =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
   }
 
   public void featureOneButtonClicked() throws IOException {
