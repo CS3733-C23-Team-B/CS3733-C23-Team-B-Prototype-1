@@ -7,41 +7,49 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <children>
-      <GridPane layoutX="270.0" layoutY="193.0" prefHeight="214.0" prefWidth="260.0">
+      <GridPane id="signInGrid" layoutX="326.0" layoutY="175.0" prefHeight="268.0" prefWidth="393.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="46.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="55.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="119.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="103.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="88.0" minHeight="3.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField promptText="Username">
+            <TextField prefHeight="25.0" prefWidth="199.0" promptText="Username" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="30.0" right="30.0" />
+                  <Insets left="60.0" right="60.0" />
                </GridPane.margin></TextField>
-            <TextField promptText="Password" GridPane.rowIndex="1">
+            <TextField promptText="Password" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="30.0" right="30.0" />
+                  <Insets left="60.0" right="60.0" />
                </GridPane.margin></TextField>
-            <Button id="signInButton" fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonClicked" text="SignIn" GridPane.rowIndex="2">
+            <Button id="signInButton" fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonClicked" prefHeight="25.0" prefWidth="211.0" text="Sign In" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets left="140.0" />
+                  <Insets />
                </GridPane.margin></Button>
+            <CheckBox mnemonicParsing="false" text="Keep me signed in" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="40.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <Label prefHeight="32.0" prefWidth="288.0" text="Welcome to Hospital Service!" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="114.0" text="Please sign In below." GridPane.halignment="CENTER" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <ToolBar prefHeight="75.0" prefWidth="800.0">
-         <items>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital Service" wrappingWidth="207.3129997253418">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-         </items>
-         <padding>
-            <Insets bottom="20.0" left="20.0" top="20.0" />
-         </padding>
-      </ToolBar>
    </children>
 </AnchorPane>

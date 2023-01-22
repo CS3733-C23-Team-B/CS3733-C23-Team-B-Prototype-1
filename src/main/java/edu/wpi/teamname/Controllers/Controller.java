@@ -52,6 +52,12 @@ public class Controller {
     root.setId("pane");
     Scene scene = new Scene(root, 800, 600);
     scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+    // locking the stage size
+    stage.setMinHeight(600);
+    stage.setMinWidth(800);
+    stage.setMaxHeight(600);
+    stage.setMaxWidth(800);
+
     stage.setScene(scene);
     stage.show();
   }
