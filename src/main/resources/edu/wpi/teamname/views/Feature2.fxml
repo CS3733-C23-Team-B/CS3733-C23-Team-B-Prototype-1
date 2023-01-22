@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <top>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sanitation Service Request" BorderPane.alignment="CENTER">
          <font>
@@ -24,45 +22,83 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0" spacing="115.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" wrappingWidth="57.076171875" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
                </children>
+               <padding>
+                  <Insets right="300.0" />
+               </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="25.0">
                <children>
                   <MFXTextField prefHeight="50.0" prefWidth="147.0" />
                   <MFXTextField prefHeight="50.0" prefWidth="135.0" />
                </children>
+               <padding>
+                  <Insets right="225.0" />
+               </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0" spacing="105.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
                </children>
+               <padding>
+                  <Insets right="325.0" />
+               </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="25.0">
                <children>
                   <MFXTextField prefHeight="50.0" prefWidth="147.0" />
                   <MFXTextField prefHeight="50.0" prefWidth="135.0" />
                </children>
+               <padding>
+                  <Insets right="225.0" />
+               </padding>
             </HBox>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Request Information">
                <font>
                   <Font size="24.0" />
                </font>
+               <VBox.margin>
+                  <Insets right="250.0" top="15.0" />
+               </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clean Up Location" />
-            <MFXTextField prefHeight="50.0" prefWidth="160.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Urgency" />
-            <ChoiceBox prefWidth="150.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of Clean Up" />
-            <ChoiceBox prefWidth="150.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area of Clean Up" />
-            <ChoiceBox prefWidth="150.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clean Up Location">
+               <VBox.margin>
+                  <Insets right="365.0" top="10.0" />
+               </VBox.margin></Text>
+            <MFXTextField prefHeight="50.0" prefWidth="160.0">
+               <VBox.margin>
+                  <Insets right="365.0" />
+               </VBox.margin></MFXTextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Urgency">
+               <VBox.margin>
+                  <Insets right="365.0" top="10.0" />
+               </VBox.margin></Text>
+            <ChoiceBox prefWidth="150.0">
+               <VBox.margin>
+                  <Insets right="365.0" />
+               </VBox.margin></ChoiceBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type of Clean Up">
+               <VBox.margin>
+                  <Insets right="365.0" top="10.0" />
+               </VBox.margin></Text>
+            <ChoiceBox prefWidth="150.0">
+               <VBox.margin>
+                  <Insets right="365.0" />
+               </VBox.margin></ChoiceBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area of Clean Up">
+               <VBox.margin>
+                  <Insets right="365.0" top="10.0" />
+               </VBox.margin></Text>
+            <ChoiceBox prefWidth="150.0">
+               <VBox.margin>
+                  <Insets right="365.0" />
+               </VBox.margin></ChoiceBox>
          </children>
       </VBox>
    </bottom>
 </BorderPane>
-
