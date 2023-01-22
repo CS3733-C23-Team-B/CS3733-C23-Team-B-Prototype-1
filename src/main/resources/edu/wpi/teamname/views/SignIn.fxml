@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
    <children>
-      <GridPane layoutX="205.0" layoutY="120.0" prefHeight="195.0" prefWidth="190.0">
+      <GridPane layoutX="270.0" layoutY="193.0" prefHeight="214.0" prefWidth="260.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -23,12 +17,21 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField promptText="Username" />
-            <TextField promptText="Password" GridPane.rowIndex="1" />
-            <Button id="signInButton" fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonClicked" text="SignIn" GridPane.rowIndex="2" />
+            <TextField promptText="Username">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin></TextField>
+            <TextField promptText="Password" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </GridPane.margin></TextField>
+            <Button id="signInButton" fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonClicked" text="SignIn" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="140.0" />
+               </GridPane.margin></Button>
          </children>
       </GridPane>
-      <ToolBar prefHeight="47.0" prefWidth="600.0">
+      <ToolBar prefHeight="75.0" prefWidth="800.0">
          <items>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hospital Service" wrappingWidth="207.3129997253418">
                <font>

@@ -19,7 +19,10 @@ public class App extends Application {
   @Override
   public void start(Stage primaryStage) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("views/SignIn.fxml"));
-    primaryStage.setScene(new Scene(root, 600, 600));
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+    primaryStage.setScene(scene);
     primaryStage.setTitle("Hospital Service");
     primaryStage.show();
   }
