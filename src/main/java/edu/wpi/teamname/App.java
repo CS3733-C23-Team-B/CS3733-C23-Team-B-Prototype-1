@@ -30,7 +30,7 @@ public class App extends Application {
     primaryStage.setMaxWidth(800);
 
     primaryStage.setScene(scene);
-    primaryStage.setTitle("Hospital Service");
+    primaryStage.setTitle("Badger Crossing Health Clinic");
     primaryStage.show();
   }
 
