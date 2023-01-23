@@ -1,12 +1,12 @@
 package edu.wpi.teamname.Controllers;
 
-import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 
 public class feature2Controller {
   // Lists for choiceboxes
@@ -15,7 +15,7 @@ public class feature2Controller {
   ObservableList<String> urgencyList =
       FXCollections.observableArrayList("low", "moderate", "high", "needs immediate attention");
   ObservableList<String> typeOfCleanUpList =
-      FXCollections.observableArrayList("spill", "vacant room", "bathroom");
+      FXCollections.observableArrayList("spill", "vancant room", "bathroom");
   ObservableList<String> areaOfCleanUpList =
       FXCollections.observableArrayList(
           "patient room",
@@ -28,10 +28,10 @@ public class feature2Controller {
           "other");
 
   // page attributes from fxml
-  @FXML private MFXTextField firstNameField;
-  @FXML private MFXTextField lastNameField;
-  @FXML private MFXTextField employeeIDField;
-  @FXML private MFXTextField emailField;
+  @FXML private TextField firstNameField;
+  @FXML private TextField lastNameField;
+  @FXML private TextField employeeIDField;
+  @FXML private TextField emailField;
   @FXML private ChoiceBox cleanUpLocationBox;
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
@@ -62,6 +62,7 @@ public class feature2Controller {
     emailField.clear();
   }
 
+
   private void resetChoiceBoxes() throws IOException {
     // clear choices
     // not sure if this function is the right one to clear it yet
@@ -69,6 +70,14 @@ public class feature2Controller {
     urgencyBox.valueProperty().set(null);
     typeOfCleanUpBox.valueProperty().set(null);
     areaOfCleanUpBox.valueProperty().set(null);
+  }
+
+  private void helpButtonClicked(){
+  //stuff for help button goes here
+  }
+
+  private void cancelButtonClicked(){
+  // send to home page not sure how
   }
 
   @FXML
@@ -89,7 +98,7 @@ public class feature2Controller {
 
     // may need to clear fields can be done with functions made for clear
 
-    // prep for CSV file
+    //     prep for CSV file
     String saveInfo =
         firstName
             + ","
@@ -107,6 +116,7 @@ public class feature2Controller {
             + ","
             + areaOfCleanUp
             + "/n";
+    System.out.println(saveInfo);
     // save this to csv
 
   }
