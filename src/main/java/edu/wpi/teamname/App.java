@@ -18,8 +18,7 @@ public class App extends Application {
 
   @Override
   public void start(Stage primaryStage) throws IOException {
-    System.out.println("check");
-    Parent root = FXMLLoader.load(getClass().getResource("views/HomeScreen.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("views/SignIn.fxml"));
     primaryStage.setScene(new Scene(root, 600, 600));
     primaryStage.setTitle("Hospital Service");
     primaryStage.show();
