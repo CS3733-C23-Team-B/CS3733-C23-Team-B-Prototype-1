@@ -1,12 +1,12 @@
 package edu.wpi.teamname.Controllers;
 
-import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 
 public class feature2Controller {
   // Lists for choiceboxes
@@ -28,10 +28,10 @@ public class feature2Controller {
           "other");
 
   // page attributes from fxml
-  @FXML private MFXTextField firstNameField;
-  @FXML private MFXTextField lastNameField;
-  @FXML private MFXTextField employeeIDField;
-  @FXML private MFXTextField emailField;
+  @FXML private TextField firstNameField;
+  @FXML private TextField lastNameField;
+  @FXML private TextField employeeIDField;
+  @FXML private TextField emailField;
   @FXML private ChoiceBox cleanUpLocationBox;
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
@@ -39,13 +39,12 @@ public class feature2Controller {
   @FXML private Button clearButton;
   @FXML private Button submitButton;
 
-  @FXML
   public void initialize() {
     // intialization goes here
-    // cleanUpLocationBox.setItems(cleanUpLocationList);
-    // urgencyBox.setItems(urgencyList);
-    // typeOfCleanUpBox.setItems(typeOfCleanUpList);
-    // areaOfCleanUpBox.setItems(areaOfCleanUpList);
+    cleanUpLocationBox.setItems(cleanUpLocationList);
+    urgencyBox.setItems(urgencyList);
+    typeOfCleanUpBox.setItems(typeOfCleanUpList);
+    areaOfCleanUpBox.setItems(areaOfCleanUpList);
   }
 
   public void clearButtonClicked() throws IOException {
@@ -71,11 +70,10 @@ public class feature2Controller {
     areaOfCleanUpBox.valueProperty().set(null);
   }
 
-  @FXML
   public void submitButtonClicked() throws IOException {
     // handle retrieving values and saving
 
-    // retrieve text field values
+    //    // retrieve text field values
     String firstName = firstNameField.getText();
     String lastName = lastNameField.getText();
     String employeeID = employeeIDField.getText();
@@ -89,7 +87,7 @@ public class feature2Controller {
 
     // may need to clear fields can be done with functions made for clear
 
-    // prep for CSV file
+    //     prep for CSV file
     String saveInfo =
         firstName
             + ","
@@ -107,6 +105,7 @@ public class feature2Controller {
             + ","
             + areaOfCleanUp
             + "/n";
+    System.out.println(saveInfo);
     // save this to csv
 
   }

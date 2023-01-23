@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="feature2BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.feature2Controller">
+<BorderPane fx:id="feature2BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.feature2Controller">
    <top>
       <Text fx:id="requestTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Sanitation Service Request" BorderPane.alignment="CENTER">
          <font>
@@ -105,8 +105,8 @@
                </VBox.margin></ChoiceBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
                <children>
-                  <Button fx:id="clearButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Clear" />
-                  <Button fx:id="submitButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Submit" />
+                  <Button fx:id="clearButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearButtonClicked" prefWidth="55.0" text="Clear" />
+                  <Button fx:id="submitButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submitButtonClicked" prefWidth="55.0" text="Submit" />
                </children>
                <padding>
                   <Insets top="30.0" />
