@@ -3,7 +3,6 @@ package edu.wpi.teamname.database;
 import java.sql.*;
 
 public class Bdb {
-
   private Connection c;
   private static Bdb db;
 
