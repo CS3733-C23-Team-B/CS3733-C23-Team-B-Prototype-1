@@ -52,7 +52,7 @@ public class Controller {
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/PatientTransportation.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
