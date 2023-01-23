@@ -71,9 +71,18 @@ public class Controller {
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
+        new FXMLLoader(
+            getClass()
+                .getResource("/edu/wpi/teamname/views/sanitatationFXML/sanitationService.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
+
+    // sub fxml stuff:
+    FXMLLoader loader2 =
+        new FXMLLoader(
+            getClass()
+                .getResource("/edu/wpi/teamname/views/sanitatationFXML/sanitationCustom.fxml"));
+    border.setRight(loader2.load());
   }
 
   public void featureThreeButtonClicked() throws IOException {
