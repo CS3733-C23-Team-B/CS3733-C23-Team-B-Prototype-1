@@ -19,8 +19,18 @@ public class Bapp extends Application {
   @Override
   public void start(Stage primaryStage) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("views/SignIn.fxml"));
-    primaryStage.setScene(new Scene(root, 600, 600));
-    primaryStage.setTitle("Hospital Service");
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+
+    // locking the stage size
+    primaryStage.setMinHeight(600);
+    primaryStage.setMinWidth(800);
+    primaryStage.setMaxHeight(600);
+    primaryStage.setMaxWidth(800);
+
+    primaryStage.setScene(scene);
+    primaryStage.setTitle("Badger Crossing Health Clinic");
     primaryStage.show();
   }
 
