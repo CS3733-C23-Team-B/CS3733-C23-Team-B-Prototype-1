@@ -1,23 +1,28 @@
 package edu.wpi.teamname.Pathfinding;
 
+import edu.wpi.teamname.Database.Edge;
+import edu.wpi.teamname.Database.Node;
+
+import java.sql.SQLException;
 import java.util.*;
 
 public class Pathfinding {
 
-  private static String[][] edges = {
-    {"a", "f"},
-    {"a", "b"},
-    {"b", "e"},
-    {"e", "c"},
-    {"f", "d"},
-    {"c", "g"},
-    {"f", "g"},
-    {"d", "h"},
-    {"h", "b"}
-  };
+
+  private static List<Edge> edges;
+  private static Map<String, Node> nodes;
+
+  static {
+    try {
+      edges = Edge.getAll();
+      nodes = Node.getAll();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
 
   public static void main(String[] args) {
-    System.out.println(generatePath("a", "g"));
+//    System.out.println(generatePath("a", "g"));
   }
 
   public static String generatePath(String currLocation, String destination) {
@@ -26,9 +31,11 @@ public class Pathfinding {
 
   private static ArrayList<String> getDirectPaths(String node) {
     ArrayList<String> retList = new ArrayList<String>();
-    for (String[] edge : edges) {
-      if (edge[0].equals(node)) retList.add(edge[1]);
-      else if (edge[1].equals(node)) retList.add(edge[0]);
+    for (Edge edge : edges) {
+      if (edge.getStartNode().equals(node))
+        retList.add(edge.getEndNode());
+      else if (edge.getEndNode().equals(node))
+        retList.add(edge.getStartNode());
     }
     return retList;
   }
@@ -36,7 +43,8 @@ public class Pathfinding {
   private static String pathToString(ArrayList<String> path) {
     String retStr = "";
 
-    for (String a : path) retStr += a + " -> ";
+    for (String a : path)
+      retStr += a + " -> ";
 
     retStr = retStr.substring(0, retStr.length() - 4);
     return retStr;
