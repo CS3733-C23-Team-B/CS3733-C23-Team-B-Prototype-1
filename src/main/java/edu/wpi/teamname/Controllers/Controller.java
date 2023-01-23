@@ -60,6 +60,11 @@ public class Controller {
 
     stage.setScene(scene);
     stage.show();
+
+    FXMLLoader homeLoader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    border = (BorderPane) root;
+    border.setCenter(homeLoader.load());
   }
 
   public void featureOneButtonClicked() throws IOException {
