@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import java.lang.String;
 
 public class feature2Controller {
   // Lists for choiceboxes
@@ -28,24 +29,24 @@ public class feature2Controller {
           "other");
 
   // page attributes from fxml
-  @FXML private MFXTextField firstName;
-  @FXML private MFXTextField lastName;
-  @FXML private MFXTextField employeeID;
-  @FXML private MFXTextField email;
-  @FXML private ChoiceBox cleanUpLocation;
-  @FXML private ChoiceBox urgency;
-  @FXML private ChoiceBox typeOfCleanUp;
-  @FXML private ChoiceBox areaOfCleanUp;
+  @FXML private MFXTextField firstNameField;
+  @FXML private MFXTextField lastNameField;
+  @FXML private MFXTextField employeeIDField;
+  @FXML private MFXTextField emailField;
+  @FXML private ChoiceBox cleanUpLocationBox;
+  @FXML private ChoiceBox urgencyBox;
+  @FXML private ChoiceBox typeOfCleanUpBox;
+  @FXML private ChoiceBox areaOfCleanUpBox;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
 
   @FXML
   public void initialize() {
     // intialization goes here
-    cleanUpLocation.setItems(cleanUpLocationList);
-    urgency.setItems(urgencyList);
-    typeOfCleanUp.setItems(typeOfCleanUpList);
-    areaOfCleanUp.setItems(areaOfCleanUpList);
+    cleanUpLocationBox.setItems(cleanUpLocationList);
+    urgencyBox.setItems(urgencyList);
+    typeOfCleanUpBox.setItems(typeOfCleanUpList);
+    areaOfCleanUpBox.setItems(areaOfCleanUpList);
   }
 
   public void clearButtonClicked() throws IOException {
@@ -53,6 +54,19 @@ public class feature2Controller {
   };
 
   public void submitButtonClicked() throws IOException {
-    // Stuff to handle submitting
+    // handle retriving values and saving
+
+    //retrieve text field values
+    String firstName = firstNameField.getText();
+    String lastName = lastNameField.getText();
+    String employeeID = employeeIDField.getText();
+    String email = emailField.getText();
+
+    // retrive choicebox values
+    String cleanUpLocation = (String) cleanUpLocationBox.getValue();
+    String urgency = (String) urgencyBox.getValue();
+    String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
+    String areaOfCleanUp = (String) areaOfCleanUpBox.getValue();
+
   }
 }
