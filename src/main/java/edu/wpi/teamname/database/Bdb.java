@@ -32,15 +32,15 @@ public class Bdb {
     System.out.println("Connection Successful");
   }
 
-  public void getNode(){};
+  public void getNode() {};
 
-  public void updateNode(){};
+  public void updateNode() {};
 
-  public void deleteNode(){};
+  public void deleteNode() {};
 
-  public void getEdge(){};
+  public void getEdge() {};
 
-  public void updateEdge(){};
+  public void updateEdge() {};
 
-  public void deleteEdge(){};
+  public void deleteEdge() {};
 }
