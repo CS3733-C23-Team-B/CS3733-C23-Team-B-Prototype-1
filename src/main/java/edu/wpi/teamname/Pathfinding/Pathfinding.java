@@ -21,7 +21,7 @@ public class Pathfinding {
   }
 
   public static String generatePath(String currLocation, String destination) {
-    return getShortestPath(currLocation, destination, true);
+    return getShortestPath(currLocation, destination);
   }
 
   private static ArrayList<String> getDirectPaths(String node) {
@@ -42,7 +42,7 @@ public class Pathfinding {
     return retStr;
   }
 
-  private static String getShortestPath(String start, String end, boolean depth) {
+  private static String getShortestPath(String start, String end) {
     boolean done = false;
     HashMap<String, String> cameFrom = new HashMap<String, String>();
 
