@@ -1,12 +1,12 @@
 package edu.wpi.teamname.Controllers;
 
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 
 public class feature2Controller {
   // Lists for choiceboxes
@@ -15,7 +15,7 @@ public class feature2Controller {
   ObservableList<String> urgencyList =
       FXCollections.observableArrayList("low", "moderate", "high", "needs immediate attention");
   ObservableList<String> typeOfCleanUpList =
-      FXCollections.observableArrayList("spill", "vancant room", "bathroom");
+      FXCollections.observableArrayList("spill", "vacant room", "bathroom");
   ObservableList<String> areaOfCleanUpList =
       FXCollections.observableArrayList(
           "patient room",
@@ -28,19 +28,18 @@ public class feature2Controller {
           "other");
 
   // page attributes from fxml
-  @FXML private TextField firstNameField;
-  @FXML private TextField lastNameField;
-  @FXML private TextField employeeIDField;
-  @FXML private TextField emailField;
+  @FXML private MFXTextField firstNameField;
+  @FXML private MFXTextField lastNameField;
+  @FXML private MFXTextField employeeIDField;
+  @FXML private MFXTextField emailField;
   @FXML private ChoiceBox cleanUpLocationBox;
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
   @FXML private ChoiceBox areaOfCleanUpBox;
-  @FXML private Button cancelButton;
-  @FXML private Button helpButton;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
 
+  @FXML
   public void initialize() {
     // intialization goes here
     cleanUpLocationBox.setItems(cleanUpLocationList);
@@ -72,18 +71,11 @@ public class feature2Controller {
     areaOfCleanUpBox.valueProperty().set(null);
   }
 
-  private void helpButtonClicked() {
-    // stuff for help button goes here
-  }
-
-  private void cancelButtonClicked() {
-    // send to home page not sure how
-  }
-
+  @FXML
   public void submitButtonClicked() throws IOException {
     // handle retrieving values and saving
 
-    //    // retrieve text field values
+    // retrieve text field values
     String firstName = firstNameField.getText();
     String lastName = lastNameField.getText();
     String employeeID = employeeIDField.getText();
@@ -97,7 +89,7 @@ public class feature2Controller {
 
     // may need to clear fields can be done with functions made for clear
 
-    //     prep for CSV file
+    // prep for CSV file
     String saveInfo =
         firstName
             + ","
@@ -115,8 +107,6 @@ public class feature2Controller {
             + ","
             + areaOfCleanUp
             + "/n";
-    resetTextFields();
-    resetChoiceBoxes();
     // save this to csv
 
   }
