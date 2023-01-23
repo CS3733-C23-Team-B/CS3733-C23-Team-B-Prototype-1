@@ -18,7 +18,6 @@ public class Controller {
   @FXML Button ClickButton; // fx:ID of the button in the ExampleFXML
   @FXML private Button featureOneButton;
   @FXML private Button featureTwoButton;
-  @FXML private Button featureThreeButton;
   @FXML private Button homeButton;
   @FXML private Button exitButton;
   @FXML private BorderPane border;
@@ -50,7 +49,16 @@ public class Controller {
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
     Parent root = loader.load();
-    stage.setScene(new Scene(root, 600, 600));
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+    // locking the stage size
+    stage.setMinHeight(600);
+    stage.setMinWidth(800);
+    stage.setMaxHeight(600);
+    stage.setMaxWidth(800);
+
+    stage.setScene(scene);
     stage.show();
   }
 
