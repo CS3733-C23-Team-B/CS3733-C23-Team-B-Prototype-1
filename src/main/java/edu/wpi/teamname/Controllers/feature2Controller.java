@@ -2,21 +2,32 @@ package edu.wpi.teamname.Controllers;
 
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.io.IOException;
-import javafx.collections.ObservableList;
-
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 
 public class feature2Controller {
-  //Lists for choiceboxes
-  ObservableList<String> cleanUpLocationList = FXCollections.observableArrayList("107", "204","302");
-  ObservableList<String> urgencyList = FXCollections.observableArrayList("low", "moderate","high", "needs immediate attention");
-  ObservableList<String> typeOfCleanUpList = FXCollections.observableArrayList("spill", "vancant room","bathroom");
-  ObservableList<String> areaOfCleanUpList = FXCollections.observableArrayList("patient room", "hallway","bathroom", "cafeteria", "break room", "stock room", "public space", "other");
+  // Lists for choiceboxes
+  ObservableList<String> cleanUpLocationList =
+      FXCollections.observableArrayList("107", "204", "302");
+  ObservableList<String> urgencyList =
+      FXCollections.observableArrayList("low", "moderate", "high", "needs immediate attention");
+  ObservableList<String> typeOfCleanUpList =
+      FXCollections.observableArrayList("spill", "vancant room", "bathroom");
+  ObservableList<String> areaOfCleanUpList =
+      FXCollections.observableArrayList(
+          "patient room",
+          "hallway",
+          "bathroom",
+          "cafeteria",
+          "break room",
+          "stock room",
+          "public space",
+          "other");
 
-  //page attributes from fxml
+  // page attributes from fxml
   @FXML private MFXTextField firstName;
   @FXML private MFXTextField lastName;
   @FXML private MFXTextField employeeID;
@@ -31,7 +42,10 @@ public class feature2Controller {
   @FXML
   public void initialize() {
     // intialization goes here
-    
+    cleanUpLocation.setItems(cleanUpLocationList);
+    urgency.setItems(urgencyList);
+    typeOfCleanUp.setItems(typeOfCleanUpList);
+    areaOfCleanUp.setItems(areaOfCleanUpList);
   }
 
   public void clearButtonClicked() throws IOException {
