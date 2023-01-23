@@ -63,15 +63,15 @@ public class Node {
   }
 
   public static List<Node> getAll() throws SQLException {
-    ArrayList<Node> things = new ArrayList<>();
-    String sql = "SELECT * FROM thing;";
+    ArrayList<Node> Nodes = new ArrayList<>();
+    String sql = "SELECT * FROM Node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      things.add(new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
+      Nodes.add(new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
               rs.getString("floor"), rs.getString("building"), rs.getString("nodeType"),
               rs.getString("longName"), rs.getString("shortName")));
     }
-    return things;
+    return Nodes;
   }
 
   public void insert() throws SQLException {
@@ -109,7 +109,7 @@ public class Node {
   }
 
   public void delete() throws SQLException {
-    String sql = "DELETE FROM thing WHERE nodeID = ?";
+    String sql = "DELETE FROM Node WHERE nodeID = ?";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, nodeID);
     ps.executeUpdate();
@@ -124,5 +124,3 @@ public class Node {
   }
 }
 
-
-}
