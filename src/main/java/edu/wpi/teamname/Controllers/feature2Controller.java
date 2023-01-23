@@ -4,6 +4,8 @@ import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -36,6 +38,8 @@ public class feature2Controller {
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
   @FXML private ChoiceBox areaOfCleanUpBox;
+  @FXML private Button cancelButton;
+  @FXML private Button helpButton;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
 
@@ -61,6 +65,7 @@ public class feature2Controller {
     emailField.clear();
   }
 
+
   private void resetChoiceBoxes() throws IOException {
     // clear choices
     // not sure if this function is the right one to clear it yet
@@ -68,6 +73,14 @@ public class feature2Controller {
     urgencyBox.valueProperty().set(null);
     typeOfCleanUpBox.valueProperty().set(null);
     areaOfCleanUpBox.valueProperty().set(null);
+  }
+
+  private void helpButtonClicked(){
+  //stuff for help button goes here
+  }
+
+  private void cancelButtonClicked(){
+  // send to home page not sure how
   }
 
   public void submitButtonClicked() throws IOException {
