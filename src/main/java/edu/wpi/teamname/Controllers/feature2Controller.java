@@ -91,6 +91,11 @@ public class feature2Controller {
 
     // may need to clear fields can be done with functions made for clear
 
+    //prep for CSV file
+    String saveInfo = firstName + "," + lastName + "," + employeeID + "," + email + ","
+            + cleanUpLocation + "," + urgency + "," + typeOfCleanUp + "," + areaOfCleanUp + "/n";
+    //save this to csv
 
   }
+
 }
