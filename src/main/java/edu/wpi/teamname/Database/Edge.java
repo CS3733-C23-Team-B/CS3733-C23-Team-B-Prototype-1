@@ -1,4 +1,4 @@
-package edu.wpi.teamname.database;
+package edu.wpi.teamname.Database;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
