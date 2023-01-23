@@ -78,4 +78,7 @@
             <Insets left="20.0" />
          </padding></HBox>
    </bottom>
+   <center>
+      <Button mnemonicParsing="false" text="Bruh" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
