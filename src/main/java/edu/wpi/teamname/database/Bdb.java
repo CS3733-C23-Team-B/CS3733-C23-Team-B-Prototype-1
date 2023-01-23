@@ -4,6 +4,9 @@ import java.sql.*;
 
 public class Bdb {
 
+  private Connection c;
+  private static Bdb db;
+
   public static void main(String[] args) {
 
     try {
