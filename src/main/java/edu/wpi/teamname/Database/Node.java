@@ -4,7 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List; // import java.util.stream.Stream;
+import java.util.Map;
+
 public class Node {
 
   public static final String tableName = "Node";
@@ -62,12 +65,12 @@ public class Node {
     Bdb.processUpdate(sql);
   }
 
-  public static List<Node> getAll() throws SQLException {
-    ArrayList<Node> Nodes = new ArrayList<>();
+  public static Map<String, Node> getAll() throws SQLException {
+    HashMap<String, Node> Nodes = new HashMap<String, Node>();
     String sql = "SELECT * FROM Node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Nodes.add(new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
+      Nodes.put(rs.getString("nodeID"), new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
               rs.getString("floor"), rs.getString("building"), rs.getString("nodeType"),
               rs.getString("longName"), rs.getString("shortName")));
     }
