@@ -87,4 +87,12 @@ public class Edge {
   public String getID() {
     return edgeID;
   }
+
+  public String getStartNode() {
+    return startNode;
+  }
+
+  public String getEndNode() {
+    return endNode;
+  }
 }

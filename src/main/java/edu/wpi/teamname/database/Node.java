@@ -122,5 +122,17 @@ public class Node {
   public String getID() {
     return nodeID;
   }
+
+  public int getXcoord() {
+    return xcoord;
+  }
+
+  public int getYcoord() {
+    return ycoord;
+  }
+
+  public String getFloor() {
+    return floor;
+  }
 }
 
