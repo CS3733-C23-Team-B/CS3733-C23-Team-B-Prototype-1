@@ -51,10 +51,31 @@ public class feature2Controller {
 
   public void clearButtonClicked() throws IOException {
     // Stuff to handle the clearing of fields goes here
+    resetTextFields();
+    resetChoiceBoxes();
+
   };
 
+  private void resetTextFields(){
+    //clear text fields
+    firstNameField.clear();
+    lastNameField.clear();
+    employeeIDField.clear();
+    emailField.clear();
+  }
+  private void resetChoiceBoxes() throws IOException{
+    //clear choices
+    // not sure if this function is the right one to clear it yet
+    cleanUpLocationBox.valueProperty().set(null);
+    urgencyBox.valueProperty().set(null);
+    typeOfCleanUpBox.valueProperty().set(null);
+    areaOfCleanUpBox.valueProperty().set(null);
+
+  }
+
+  @FXML
   public void submitButtonClicked() throws IOException {
-    // handle retriving values and saving
+    // handle retrieving values and saving
 
     //retrieve text field values
     String firstName = firstNameField.getText();
@@ -62,11 +83,14 @@ public class feature2Controller {
     String employeeID = employeeIDField.getText();
     String email = emailField.getText();
 
-    // retrive choicebox values
+    // retrieve choicebox values
     String cleanUpLocation = (String) cleanUpLocationBox.getValue();
     String urgency = (String) urgencyBox.getValue();
     String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
     String areaOfCleanUp = (String) areaOfCleanUpBox.getValue();
+
+    // may need to clear fields can be done with functions made for clear
+
 
   }
 }
