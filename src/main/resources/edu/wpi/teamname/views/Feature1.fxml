@@ -4,7 +4,7 @@
 <?import javafx.scene.text.*?>
 
 
-<Label prefHeight="111.0" prefWidth="280.0" text="Feature One Implimentation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
+<Label prefHeight="111.0" prefWidth="280.0" text="Feature One Implimentation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <font>
       <Font size="20.0" />
    </font>
