@@ -4,11 +4,14 @@ import edu.wpi.teamname.Database.Node;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -16,10 +19,12 @@ import javafx.stage.Stage;
 
 public class DatabaseController {
   @FXML Button nodeSearchButton;
+  @FXML ChoiceBox nodeChange;
 
   /** Method run when controller is initialized */
   public void initialize() {
     nodeSearchButton.setOnAction((actionEvent) -> getData());
+    nodeChange.setItems(getNodes());
   }
 
   /** Inserts thing into database */
@@ -30,6 +35,7 @@ public class DatabaseController {
     //    } catch (SQLException e) {
     //      e.printStackTrace();
     //    }
+
   }
 
   /** Queries data from database, displays in list */
@@ -91,5 +97,19 @@ public class DatabaseController {
     stage.setScene(scene);
 
     stage.show();
+  }
+
+  static ObservableList<String> getNodes() {
+    ObservableList<String> list = FXCollections.observableArrayList();
+    List<Node> nodes;
+    try {
+      nodes = Node.getAll();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    for (Node node : nodes) {
+      list.add(node.getID());
+    }
+    return list;
   }
 }
