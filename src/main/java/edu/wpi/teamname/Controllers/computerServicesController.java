@@ -7,10 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class computerServicesController {
   // Lists for choiceboxes
@@ -69,10 +71,26 @@ public class computerServicesController {
   }
 
   public void cancelButtonClicked() throws IOException {
+    Stage stage = (Stage) cancelButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
     Parent root = loader.load();
-    computerServiceBorderPane.setCenter(root);
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+    // locking the stage size
+    stage.setMinHeight(600);
+    stage.setMinWidth(800);
+    stage.setMaxHeight(600);
+    stage.setMaxWidth(800);
+
+    stage.setScene(scene);
+    stage.show();
+
+    FXMLLoader homeLoader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    computerServiceBorderPane = (BorderPane) root;
+    computerServiceBorderPane.setCenter(homeLoader.load());
   }
 
   @FXML
