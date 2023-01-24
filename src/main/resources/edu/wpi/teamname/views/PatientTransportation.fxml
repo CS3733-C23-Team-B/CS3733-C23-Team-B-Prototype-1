@@ -120,6 +120,11 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient's Current Location" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient's Destination" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient ID">
+                     <HBox.margin>
+                        <Insets left="29.0" />
+                     </HBox.margin>
+                  </Text>
                </children>
                <padding>
                   <Insets left="35.0" />
@@ -132,6 +137,7 @@
                <children>
                   <TextField fx:id="patientLocation" />
                   <TextField fx:id="patientDestination" />
+                  <TextField fx:id="patientID" />
                </children>
                <padding>
                   <Insets left="35.0" top="5.0" />

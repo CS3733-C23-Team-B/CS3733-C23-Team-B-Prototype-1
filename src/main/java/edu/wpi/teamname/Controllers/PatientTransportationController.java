@@ -15,6 +15,7 @@ public class PatientTransportationController {
   @FXML private ChoiceBox urgency;
   @FXML private TextField patientLocation;
   @FXML private TextField patientDestination;
+  @FXML private TextField patientID;
 
   @FXML private TextField notes;
 
