@@ -16,7 +16,6 @@ public class PatientTransportationController {
   @FXML private TextField patientLocation;
   @FXML private TextField patientDestination;
   @FXML private TextField patientID;
-
   @FXML private TextField notes;
 
   @FXML private Button cancelButton;
@@ -43,6 +42,15 @@ public class PatientTransportationController {
   };
 
   public void submitButtonClicked() throws IOException {
-    // Stuff to handle submitting
+    String[] inputInfo = {firstName.getText(),
+            lastName.getText(),
+            employeeID.getText(),
+            email.getText(),
+            (String) equipmentNeeded.getValue(),
+            (String) urgency.getValue(),
+            patientLocation.getText(),
+            patientDestination.getText(),
+            patientID.getText(),
+            notes.getText()};
   }
 }
