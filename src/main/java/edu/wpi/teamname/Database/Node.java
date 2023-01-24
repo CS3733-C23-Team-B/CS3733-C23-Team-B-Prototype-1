@@ -167,4 +167,9 @@ public class Node {
             "Short Name: " + shortName;
     return str;
   }
+
+  public void setCoords(int newX, int newY) {
+    xcoord = newX;
+    ycoord = newY;
+  }
 }
