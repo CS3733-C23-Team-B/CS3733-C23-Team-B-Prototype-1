@@ -17,7 +17,7 @@ public class sanitationServiceController {
   ObservableList<String> urgencyList =
       FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
   ObservableList<String> typeOfCleanUpList =
-      FXCollections.observableArrayList("Bathroom", "Spill", "Vacant Room");
+      FXCollections.observableArrayList("Bathroom", "Spill", "Vacant Room", "Blood", "Chemicals");
   /*
   ObservableList<String> areaOfCleanUpList =
       FXCollections.observableArrayList(
