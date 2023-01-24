@@ -20,9 +20,14 @@ public class Pathfinding {
   }
 
   public static void main(String[] args) {
-//    System.out.println(generatePath("a", "g"));
+//    System.out.println(getShortestPath("a", "g"));
   }
 
+  /**
+   * Given an edge, evaluates the weight of the edge
+   * @param edge the edge to evaluate the weight of
+   * @return the weight of the edge via Euclidean distance
+   */
   private static double getWeight(Edge edge) {
     Node node1 = nodes.get(edge.getStartNode());
     Node node2 = nodes.get(edge.getEndNode());
@@ -30,6 +35,12 @@ public class Pathfinding {
     return getDist(node1, node2);
   }
 
+  /**
+   * Given two nodes, evaluates the weight of the edge between the two
+   * @param n1 start node
+   * @param n2 end node
+   * @return the Euclidean distance between the two nodes
+   */
   private static double getWeight(String n1, String n2) {
     Node node1 = nodes.get(n1);
     Node node2 = nodes.get(n2);
@@ -37,6 +48,11 @@ public class Pathfinding {
     return getDist(node1, node2);
   }
 
+  /**
+   * Calculates the Euclidean distance between two nodes
+   * @param node1 start node
+   * @param node2 end node
+   */
   private static double getDist(Node node1, Node node2) {
     double x1 = node1.getXcoord();
     double x2 = node2.getXcoord();
@@ -49,10 +65,11 @@ public class Pathfinding {
     return dist;
   }
 
-  public static String generatePath(String currLocation, String destination) {
-    return getShortestPath(currLocation, destination);
-  }
-
+  /**
+   * Generates a list of the nodes that can be reached directly from the given node
+   * @param node the node to generate paths from
+   * @return a list of all nodes reachable via one edge
+   */
   private static ArrayList<String> getDirectPaths(String node) {
     ArrayList<String> retList = new ArrayList<String>();
     for (Edge edge : edges) {
