@@ -1,7 +1,6 @@
 package edu.wpi.teamname.Controllers;
 
 import java.io.IOException;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -30,13 +29,11 @@ public class PatientTransportationController {
   @FXML private BorderPane feature1Border;
 
   ObservableList<String> equipmentOptions =
-          FXCollections.observableArrayList("Stretcher","Wheelchair", "Restraints","Stair Chair");
+      FXCollections.observableArrayList("Stretcher", "Wheelchair", "Restraints", "Stair Chair");
   ObservableList<String> urgencyOptions =
-          FXCollections.observableArrayList("Low","Moderate","High","Requires Immediate Attention");
+      FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
 
-  /**
-   * Initialize the page by declaring choicebox options
-   */
+  /** Initialize the page by declaring choicebox options */
   public void initialize() {
     equipmentNeeded.setItems(equipmentOptions);
     urgency.setItems(urgencyOptions);
@@ -45,11 +42,12 @@ public class PatientTransportationController {
 
   /**
    * Return to the home screen without saving form data
+   *
    * @throws IOException
    */
   public void cancelButtonClicked() throws IOException {
     FXMLLoader loader =
-            new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
     feature1Border.setCenter(root);
     // TODO: copy nav bar home screen button
@@ -57,6 +55,7 @@ public class PatientTransportationController {
 
   /**
    * Display the help page
+   *
    * @throws IOException
    */
   public void helpButtonClicked() throws IOException {
@@ -66,6 +65,7 @@ public class PatientTransportationController {
 
   /**
    * Remove all inputted data from the form
+   *
    * @throws IOException
    */
   public void clearButtonClicked() throws IOException {
@@ -78,24 +78,27 @@ public class PatientTransportationController {
     patientLocation.clear();
     patientDestination.clear();
     patientID.clear();
-    notes.clear();}
+    notes.clear();
+  }
 
   /**
    * Store the data from the form in a csv file and return to home screen
+   *
    * @throws IOException
    */
   public void submitButtonClicked() throws IOException {
-    String[] inputInfo = {firstName.getText(),
-            lastName.getText(),
-            employeeID.getText(),
-            email.getText(),
-            (String) equipmentNeeded.getValue(),
-            (String) urgency.getValue(),
-            patientLocation.getText(),
-            patientDestination.getText(),
-            patientID.getText(),
-            notes.getText()};
-
+    String[] inputInfo = {
+      firstName.getText(),
+      lastName.getText(),
+      employeeID.getText(),
+      email.getText(),
+      (String) equipmentNeeded.getValue(),
+      (String) urgency.getValue(),
+      patientLocation.getText(),
+      patientDestination.getText(),
+      patientID.getText(),
+      notes.getText()
+    };
 
     // TODO: save to CSV, return to home screen or show confirmation page
   }
