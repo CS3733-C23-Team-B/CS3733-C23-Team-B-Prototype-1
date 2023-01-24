@@ -168,14 +168,14 @@
                         </VBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="600.0" spacing="15.0">
                            <children>
-                              <Button fx:id="cancelButton" mnemonicParsing="false" text="Cancel">
+                              <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancelButtonClicked" text="Cancel">
                                  <HBox.margin>
                                     <Insets right="280.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="helpButton" mnemonicParsing="false" text="Help" />
-                              <Button fx:id="clearButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Clear" />
-                              <Button fx:id="submitButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Submit" />
+                              <Button fx:id="helpButton" mnemonicParsing="false" onMouseClicked="#helpButtonClicked" text="Help" />
+                              <Button fx:id="clearButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clearButtonClicked" prefWidth="55.0" text="Clear" />
+                              <Button fx:id="submitButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#submitButtonClicked" prefWidth="55.0" text="Submit" />
                            </children>
                            <padding>
                               <Insets top="30.0" />
