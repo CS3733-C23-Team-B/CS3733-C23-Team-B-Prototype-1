@@ -11,7 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
-public class feature2Controller {
+public class sanitationServiceController {
   // Lists for choiceboxes
   ObservableList<String> urgencyList =
       FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
@@ -100,7 +100,8 @@ public class feature2Controller {
     String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
 
     // may need to clear fields can be done with functions made for clear
-
+    resetChoiceBoxes();
+    resetTextFields();
     //     prep for CSV file
     String saveInfo =
         firstName
@@ -118,6 +119,7 @@ public class feature2Controller {
             + typeOfCleanUp
             + "/n";
     System.out.println(saveInfo);
+//    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency, typeOfCleanUp};
     // save this to csv
 
   }
