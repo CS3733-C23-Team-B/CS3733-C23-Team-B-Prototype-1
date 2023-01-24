@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Pathfinding {
-
-
   private static List<Edge> edges;
   private static Map<String, Node> nodes;
 
@@ -23,6 +21,22 @@ public class Pathfinding {
 
   public static void main(String[] args) {
 //    System.out.println(generatePath("a", "g"));
+  }
+
+  private double getWeight(Edge edge)
+  {
+    Node node1 = nodes.get(edge.getStartNode());
+    Node node2 = nodes.get(edge.getEndNode());
+
+    double x1 = node1.getXcoord();
+    double x2 = node2.getXcoord();
+    double y1 = node1.getYcoord();
+    double y2 = node2.getYcoord();
+//    int f1 = Integer.parseInt(node1.getFloor().substring(1));
+//    int f2 = Integer.parseInt(node2.getFloor().substring(1));
+
+    double dist = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    return dist;
   }
 
   public static String generatePath(String currLocation, String destination) {
@@ -60,9 +74,9 @@ public class Pathfinding {
     while (toExpand.size() > 0) {
 
       // Breadth-first:
-      String current = toExpand.remove(0);
+//      String current = toExpand.remove(0);
       // Depth-first:
-      //      String current = toExpand.remove(toExpand.size() - 1);
+      String current = toExpand.remove(toExpand.size() - 1);
 
       ArrayList<String> directPaths = getDirectPaths(current);
       for (String path : directPaths) {
@@ -92,5 +106,9 @@ public class Pathfinding {
     }
 
     return pathToString(path);
+  }
+
+  private static String getShortestPathA(String start, String end) {
+    return "";
   }
 }
