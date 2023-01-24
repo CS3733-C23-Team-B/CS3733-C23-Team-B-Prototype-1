@@ -83,7 +83,7 @@ public class Controller {
 
   public void featureThreeButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/computerServices.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
