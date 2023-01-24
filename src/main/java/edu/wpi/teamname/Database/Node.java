@@ -138,7 +138,7 @@ public class Node {
   }
 
   public static String getTableName() {
-    return tableName;
+    return tableName.toLowerCase();
   }
 
   public String getID() {

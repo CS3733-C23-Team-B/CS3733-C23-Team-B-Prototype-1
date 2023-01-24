@@ -19,7 +19,10 @@ public class Pathfinding {
   }
 
   public static void main(String[] args) {
-    System.out.println(getShortestPath("CCONF001L1", "CCONF002L1"));
+    System.out.println("\n");
+    System.out.println(getShortestPath("CCONF001L1", "CREST004L1"));
+    System.out.println("\n");
+    System.out.println(getShortestPathA("CCONF001L1", "CREST004L1"));
   }
 
   /**
@@ -82,7 +85,13 @@ public class Pathfinding {
     return retList;
   }
 
-  private static String pathToString(ArrayList<String> path) {
+  /**
+   * Converts a graph traversal path from a list to a String
+   *
+   * @param path List of nodes traversed in order
+   * @return a String representation of the path taken
+   */
+  private static String pathToString(List<String> path) {
     String retStr = "";
 
     for (String a : path) retStr += a + " -> ";
@@ -91,7 +100,14 @@ public class Pathfinding {
     return retStr;
   }
 
-  private static String getShortestPath(String start, String end) {
+  /**
+   * Finds a path from start to end using depth/breadth-first search
+   *
+   * @param start the node to start from
+   * @param end the node to end at
+   * @return a String representation of the path taken
+   */
+  public static String getShortestPath(String start, String end) {
     boolean done = false;
     HashMap<String, String> cameFrom = new HashMap<String, String>();
 
@@ -101,9 +117,9 @@ public class Pathfinding {
     while (toExpand.size() > 0) {
 
       // Breadth-first:
-      //      String current = toExpand.remove(0);
+      String current = toExpand.remove(0);
       // Depth-first:
-      String current = toExpand.remove(toExpand.size() - 1);
+      // String current = toExpand.remove(toExpand.size() - 1);
 
       ArrayList<String> directPaths = getDirectPaths(current);
       for (String path : directPaths) {
@@ -135,6 +151,13 @@ public class Pathfinding {
     return pathToString(path);
   }
 
+  /**
+   * Finds an optimal path from start to end using A* search
+   *
+   * @param start the node to start from
+   * @param end the node to end at
+   * @return a String representation of the path taken
+   */
   private static String getShortestPathA(String start, String end) {
     PriorityQueue<GraphNode> queue = new PriorityQueue<GraphNode>();
     queue.add(new GraphNode(start, 0));
