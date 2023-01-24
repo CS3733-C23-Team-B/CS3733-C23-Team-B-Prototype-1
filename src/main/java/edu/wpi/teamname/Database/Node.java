@@ -155,4 +155,16 @@ public class Node {
   public String getFloor() {
     return floor;
   }
+
+  public String getInfo() {
+    String str = "Node: " + nodeID + ", " +
+            "X: " + xcoord + ", " +
+            "Y: " + ycoord + ", " +
+            "Floor: " + floor + ", " +
+            "Building: " + building + ", " +
+            "Node Type: " + nodeType + ", " +
+            "Long Name: " + longName + ", " +
+            "Short Name: " + shortName;
+    return str;
+  }
 }
