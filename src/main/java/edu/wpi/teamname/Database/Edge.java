@@ -1,4 +1,4 @@
-package edu.wpi.teamname.database;
+package edu.wpi.teamname.Database;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -84,7 +84,7 @@ public class Edge {
   }
 
   public static String getTableName() {
-    return tableName;
+    return tableName.toLowerCase();
   }
 
   public String getID() {
