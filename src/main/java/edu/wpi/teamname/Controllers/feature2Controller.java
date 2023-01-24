@@ -4,9 +4,12 @@ import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 public class feature2Controller {
   // Lists for choiceboxes
@@ -28,6 +31,7 @@ public class feature2Controller {
    */
 
   // page attributes from fxml
+  @FXML private BorderPane feature2BorderPane;
   @FXML private TextField firstNameField;
   @FXML private TextField lastNameField;
   @FXML private TextField employeeIDField;
@@ -73,8 +77,11 @@ public class feature2Controller {
     // stuff for help button goes here
   }
 
-  private void cancelButtonClicked() {
-    // send to home page not sure how
+  public void cancelButtonClicked() throws IOException {
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    Parent root = loader.load();
+    feature2BorderPane.setCenter(root);
   }
 
   @FXML

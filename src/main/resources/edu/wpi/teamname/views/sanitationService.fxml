@@ -127,7 +127,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="cancelButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Cancel">
+                  <Button fx:id="cancelButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButtonClicked" prefWidth="55.0" text="Cancel" >
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
