@@ -5,12 +5,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -19,9 +20,10 @@ public class Controller {
   @FXML private Button featureOneButton;
   @FXML private Button featureTwoButton;
   @FXML private Button homeButton;
-  @FXML private Button exitButton;
+  @FXML private MenuItem exitButton;
   @FXML private BorderPane border;
   @FXML private Button signInButton;
+  @FXML private MenuButton menuButton;
 
   private Connection connection = null; // connection to database
 
@@ -31,17 +33,7 @@ public class Controller {
     //    if (this.connectToDB()) {
     //      this.createTable();
     //    }
-  }
 
-  /**
-   * When the button is clicked, the method will log the data in the terminal and database
-   *
-   * @param actionEvent event that triggered method
-   * @throws IOException
-   */
-  public void buttonClicked(ActionEvent actionEvent) throws IOException {
-    System.out.println("Button was clicked");
-    System.out.println(this.logData() ? "Data logged" : "Data NOT logged");
   }
 
   public void signInButtonClicked() throws IOException {
@@ -96,7 +88,7 @@ public class Controller {
   }
 
   public void exitButtonClicked() throws IOException {
-    Stage stage = (Stage) exitButton.getScene().getWindow();
+    Stage stage = (Stage) homeButton.getScene().getWindow();
     stage.close();
   }
 

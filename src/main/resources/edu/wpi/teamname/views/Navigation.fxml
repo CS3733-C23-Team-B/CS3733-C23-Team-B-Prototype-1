@@ -12,11 +12,13 @@
           <Button id="homeButton" fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClicked" text="Home" textAlignment="CENTER" />
             <Button id="featureOneButton" fx:id="featureOneButton" mnemonicParsing="false" onAction="#featureOneButtonClicked" text="Patient Transportation" textAlignment="CENTER" />
             <Button id="featureOneButton" fx:id="featureTwoButton" mnemonicParsing="false" onAction="#featureTwoButtonClicked" text="Sanitation Services" />
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="298.0">
-               <padding>
-                  <Insets right="250.0" />
-               </padding></Separator>
-            <Button id="exitButton" fx:id="exitButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit Application" textAlignment="RIGHT" />
+            <Separator prefHeight="43.0" prefWidth="361.0" visible="false" />
+            <MenuButton id="menuIcon" fx:id="menuButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Help" />
+                <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit Application" />
+              </items>
+            </MenuButton>
         </items>
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -78,7 +80,4 @@
             <Insets left="20.0" />
          </padding></HBox>
    </bottom>
-   <center>
-      <Button mnemonicParsing="false" text="Bruh" BorderPane.alignment="CENTER" />
-   </center>
 </BorderPane>
