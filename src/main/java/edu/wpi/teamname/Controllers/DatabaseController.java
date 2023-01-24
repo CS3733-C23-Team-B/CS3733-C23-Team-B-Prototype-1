@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -29,6 +31,7 @@ public class DatabaseController {
 
   /** Queries data from database, displays in list */
   private void getData() {
+    BorderPane bor = new BorderPane();
     VBox nodeBox = new VBox();
     List<Node> nodes;
     try {
@@ -40,14 +43,18 @@ public class DatabaseController {
     nodeBox.getChildren().add(new Label("Current Nodes:"));
     for (Node thing : nodes) {
       System.out.println("Node Id:" + thing.getID());
-      nodeBox.getChildren().add(new Label("Node: " + thing.getID()));
+      nodeBox
+          .getChildren()
+          .add(new Label("Node:  " + thing.getID() + "  Floor:  " + thing.getFloor()));
     }
-    // create a scene
-
-    Scene scene = new Scene(nodeBox, 300, 300);
+    bor.setCenter(nodeBox);
+    Button b = new Button();
+    b.setText("Back");
+    
+    bor.setBottom(b);
+    Scene scene = new Scene(bor, 800, 900);
 
     Stage stage = (Stage) nodeSearchButton.getScene().getWindow();
-    // set the scene
     stage.setScene(scene);
 
     stage.show();
