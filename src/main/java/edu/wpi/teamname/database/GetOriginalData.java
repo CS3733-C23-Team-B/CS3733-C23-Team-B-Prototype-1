@@ -6,7 +6,7 @@ public class GetOriginalData {
 
     public ArrayList<Node> getNodesFromCSV() {
 
-        FileReader fr = new FileReader()
+        FileReader fr = new FileReader();
         ArrayList<Node> csvNodes = new ArrayList<Node>();
 
     }
