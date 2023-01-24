@@ -17,9 +17,9 @@ import javafx.stage.Stage;
 public class computerServicesController {
   // Lists for choiceboxes
   ObservableList<String> typeOfIssueList =
-      FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
-  ObservableList<String> typeOfCleanUpList =
-      FXCollections.observableArrayList("Bathroom", "Spill", "Vacant Room");
+      FXCollections.observableArrayList(
+          "Disconnecting From Wi-Fi", "Won't Power On", "Blue Screen", "Freezing");
+  ObservableList<String> typeOfDeviceList = FXCollections.observableArrayList("Laptop", "PC");
 
   // page attributes from fxml
   @FXML private BorderPane computerServiceBorderPane;
@@ -40,7 +40,7 @@ public class computerServicesController {
   public void initialize() {
     // intialization goes here
     typeOfIssueBox.setItems(typeOfIssueList);
-    typeOfDeviceBox.setItems(typeOfCleanUpList);
+    typeOfDeviceBox.setItems(typeOfDeviceList);
   }
 
   public void clearButtonClicked() throws IOException {

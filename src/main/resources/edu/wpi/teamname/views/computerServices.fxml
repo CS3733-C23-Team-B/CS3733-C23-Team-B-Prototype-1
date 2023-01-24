@@ -19,7 +19,7 @@
                   <Font size="24.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="5.0" right="380.0" />
+                  <Insets bottom="10.0" right="380.0" />
                </VBox.margin>
             </Text>
             <HBox fx:id="labels1" alignment="CENTER" prefHeight="25.0" prefWidth="200.0" spacing="115.0">
@@ -112,7 +112,7 @@
             <HBox prefHeight="26.0" prefWidth="700.0" spacing="40.0">
                <children>
                   <ChoiceBox fx:id="typeOfDeviceBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
-                  <TextField fx:id="notesField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="300.0" />
+                  <TextField fx:id="notesField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" />
                </children>
                <padding>
                   <Insets bottom="15.0" left="17.0" />
