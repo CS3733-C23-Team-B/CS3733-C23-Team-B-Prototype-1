@@ -75,11 +75,16 @@ public class Node {
   }
 
   public static List<Node> getAll() throws SQLException {
+<<<<<<< Updated upstream:src/main/java/edu/wpi/teamname/Database/Node.java
     ArrayList<Node> Nodes = new ArrayList<>();
     String sql = "SELECT * FROM node;";
+=======
+    ArrayList<Node> nodes = new ArrayList<>();
+    String sql = "SELECT * FROM Node;";
+>>>>>>> Stashed changes:src/main/java/edu/wpi/teamname/database/Node.java
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Nodes.add(
+      nodes.add(
           new Node(
               rs.getString("nodeID"),
               rs.getInt("xcoord"),
@@ -90,7 +95,7 @@ public class Node {
               rs.getString("longName"),
               rs.getString("shortName")));
     }
-    return Nodes;
+    return nodes;
   }
 
   public void insert() throws SQLException {
