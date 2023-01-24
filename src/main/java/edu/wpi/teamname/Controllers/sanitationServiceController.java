@@ -1,5 +1,6 @@
 package edu.wpi.teamname.Controllers;
 
+import edu.wpi.teamname.csvWriter;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -117,9 +118,13 @@ public class sanitationServiceController {
             + urgency
             + ","
             + typeOfCleanUp
-            + "/n";
+            + "\n";
+    csvWriter writer = new csvWriter();
+    writer.writeCsv("sanitationService", saveInfo);
+
     System.out.println(saveInfo);
-//    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency, typeOfCleanUp};
+    //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
+    // typeOfCleanUp};
     // save this to csv
 
   }
