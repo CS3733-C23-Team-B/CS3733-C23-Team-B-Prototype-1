@@ -7,10 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class sanitationServiceController {
   // Lists for choiceboxes
@@ -77,12 +79,36 @@ public class sanitationServiceController {
   private void helpButtonClicked() {
     // stuff for help button goes here
   }
-
+  /*
   public void cancelButtonClicked() throws IOException {
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
     Parent root = loader.load();
     feature2BorderPane.setCenter(root);
+  }
+  */
+
+  public void cancelButtonClicked() throws IOException {
+    Stage stage = (Stage) cancelButton.getScene().getWindow();
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+    Parent root = loader.load();
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
+    // locking the stage size
+    stage.setMinHeight(600);
+    stage.setMinWidth(800);
+    stage.setMaxHeight(600);
+    stage.setMaxWidth(800);
+
+    stage.setScene(scene);
+    stage.show();
+
+    FXMLLoader homeLoader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    feature2BorderPane = (BorderPane) root;
+    feature2BorderPane.setCenter(homeLoader.load());
   }
 
   @FXML
@@ -122,7 +148,7 @@ public class sanitationServiceController {
     csvWriter writer = new csvWriter();
     writer.writeCsv("sanitationService", saveInfo);
 
-//    System.out.println(saveInfo);
+    //    System.out.println(saveInfo);
     //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
     // typeOfCleanUp};
     // save this to csv
