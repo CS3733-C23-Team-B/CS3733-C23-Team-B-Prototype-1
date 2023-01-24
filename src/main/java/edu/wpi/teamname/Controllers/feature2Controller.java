@@ -38,6 +38,8 @@ public class feature2Controller {
   @FXML private ChoiceBox areaOfCleanUpBox;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
+  @FXML private Button helpButton;
+  @FXML private Button cancelButton;
 
   @FXML
   public void initialize() {
@@ -62,7 +64,6 @@ public class feature2Controller {
     emailField.clear();
   }
 
-
   private void resetChoiceBoxes() throws IOException {
     // clear choices
     // not sure if this function is the right one to clear it yet
@@ -72,12 +73,12 @@ public class feature2Controller {
     areaOfCleanUpBox.valueProperty().set(null);
   }
 
-  private void helpButtonClicked(){
-  //stuff for help button goes here
+  private void helpButtonClicked() {
+    // stuff for help button goes here
   }
 
-  private void cancelButtonClicked(){
-  // send to home page not sure how
+  private void cancelButtonClicked() {
+    // send to home page not sure how
   }
 
   @FXML
