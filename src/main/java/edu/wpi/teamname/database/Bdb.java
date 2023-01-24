@@ -6,10 +6,12 @@ public class Bdb {
   private Connection c;
   private static Bdb db;
 
-  static {
+  public static void main(String[] args) {
     try {
       db = new Bdb();
       db.init();
+      System.out.println(tableExists("node"));
+      System.out.println(tableExists("edge"));
     } catch (ClassNotFoundException | SQLException e) {
       throw new RuntimeException(e);
     }
@@ -17,13 +19,17 @@ public class Bdb {
 
   public Bdb() throws ClassNotFoundException, SQLException {
     Class.forName("org.postgresql.Driver");
-    c = DriverManager.getConnection(
-            "jdbc:postgresql://database.cs.wpi.edu:5432/teambdb",
+    c =
+        DriverManager.getConnection(
+            "jdbc:postgresql://wpi-softeng-postgres-db.coyfss2f91ba.us-east-1.rds.amazonaws.com:2112/dbb",
             "teamb",
-            "teamb20");
+            "4ipr31GQJAKch9baIPQlSYyMlywZ0yTe");
   }
 
   public void init() throws SQLException {
+    if (!tableExists(Thing.getTableName())) {
+      Thing.initTable();
+    }
     if (!tableExists(Node.getTableName())) {
       Node.initTable();
     }
@@ -59,13 +65,13 @@ public class Bdb {
 
   public static boolean tableExists(String tableName) throws SQLException {
     String query =
-            "SELECT EXISTS (\n"
-                    + "SELECT FROM\n"
-                    + "   pg_tables\n"
-                    + "WHERE\n"
-                    + "   schemaname = 'public' AND\n"
-                    + "   tablename  = ?\n"
-                    + ");\n";
+        "SELECT EXISTS (\n"
+            + "SELECT FROM\n"
+            + "   pg_tables\n"
+            + "WHERE\n"
+            + "   schemaname = 'public' AND\n"
+            + "   tablename  = ?\n"
+            + ");\n";
 
     PreparedStatement stmt = getInstance().c.prepareStatement(query);
     stmt.setString(1, tableName);
@@ -79,4 +85,3 @@ public class Bdb {
     return db;
   }
 }
-

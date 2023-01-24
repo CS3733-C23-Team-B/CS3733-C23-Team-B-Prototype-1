@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List; // import java.util.stream.Stream;
+
 public class Node {
 
   public static final String tableName = "Node";
@@ -18,8 +19,13 @@ public class Node {
   private String shortName;
 
   public Node(
-      int xcoord, int ycoord, String floor, String building,
-      String nodeType, String longName, String shortName) {
+      int xcoord,
+      int ycoord,
+      String floor,
+      String building,
+      String nodeType,
+      String longName,
+      String shortName) {
 
     this.nodeID = null;
     this.xcoord = xcoord;
@@ -32,9 +38,14 @@ public class Node {
   }
 
   public Node(
-          String nodeID,
-          int xcoord, int ycoord, String floor, String building,
-          String nodeType, String longName, String shortName) {
+      String nodeID,
+      int xcoord,
+      int ycoord,
+      String floor,
+      String building,
+      String nodeType,
+      String longName,
+      String shortName) {
 
     this.nodeID = nodeID;
     this.xcoord = xcoord;
@@ -48,17 +59,18 @@ public class Node {
 
   public static void initTable() throws SQLException {
     String sql =
-            String.join(
-                    " ",
-                    "CREATE TABLE Node",
-                    "(nodeID char(10),",
-                    "xcoord integer,",
-                    "ycoord integer,",
-                    "floor varchar(4),",
-                    "building varchar(15),",
-                    "nodeType char(4),",
-                    "longName varchar(70)",
-                    "shortName varchar(40));");
+        String.join(
+            " ",
+            "CREATE TABLE Node",
+            "(nodeID CHAR(10),",
+            "xcoord INTEGER,",
+            "ycoord INTEGER,",
+            "floor VARCHAR(4),",
+            "building VARCHAR(15),",
+            "nodeType CHAR(4),",
+            "longName VARCHAR(70),",
+            "shortName VARCHAR(40),",
+            "PRIMARY KEY (nodeID) );");
     Bdb.processUpdate(sql);
   }
 
@@ -67,16 +79,24 @@ public class Node {
     String sql = "SELECT * FROM Node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Nodes.add(new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
-              rs.getString("floor"), rs.getString("building"), rs.getString("nodeType"),
-              rs.getString("longName"), rs.getString("shortName")));
+      Nodes.add(
+          new Node(
+              rs.getString("nodeID"),
+              rs.getInt("xcoord"),
+              rs.getInt("ycoord"),
+              rs.getString("floor"),
+              rs.getString("building"),
+              rs.getString("nodeType"),
+              rs.getString("longName"),
+              rs.getString("shortName")));
     }
     return Nodes;
   }
 
   public void insert() throws SQLException {
-    String sql = "INSERT INTO Node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) " +
-            "VALUES (?,?,?,?,?,?,?,?);";
+    String sql =
+        "INSERT INTO Node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) "
+            + "VALUES (?,?,?,?,?,?,?,?);";
     PreparedStatement ps = Bdb.prepareKeyGeneratingStatement(sql);
     ps.setString(1, nodeID);
     ps.setInt(2, xcoord);
@@ -94,8 +114,9 @@ public class Node {
   }
 
   public void update() throws SQLException {
-    String sql = "UPDATE Node SET NodeID = ?, xcoord = ?, ycoord = ?, floor = ?, " +
-            "building = ?, nodeType = ?, longName = ?, shortName = ?;";
+    String sql =
+        "UPDATE Node SET NodeID = ?, xcoord = ?, ycoord = ?, floor = ?, "
+            + "building = ?, nodeType = ?, longName = ?, shortName = ?;";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, nodeID);
     ps.setInt(2, xcoord);
@@ -135,4 +156,3 @@ public class Node {
     return floor;
   }
 }
-

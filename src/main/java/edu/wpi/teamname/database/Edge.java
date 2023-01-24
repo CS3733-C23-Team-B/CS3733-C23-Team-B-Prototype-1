@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List; // import java.util.stream.Stream;
+
 public class Edge {
 
   public static final String tableName = "Edge";
@@ -30,12 +31,15 @@ public class Edge {
 
   public static void initTable() throws SQLException {
     String sql =
-            String.join(
-                    " ",
-                    "CREATE TABLE Edge",
-                    "(edgeID char(10),",
-                    "startNode char(10),",
-                    "shortName char(10));");
+        String.join(
+            " ",
+            "CREATE TABLE Edge",
+            "(edgeID CHAR(10),",
+            "startNode CHAR(10),",
+            "endNode CHAR(10),",
+            "PRIMARY KEY(edgeID),",
+            "FOREIGN KEY(startNode) REFERENCES Node(nodeID),",
+            "FOREIGN KEY(endNode) REFERENCES Node(nodeID) );");
     Bdb.processUpdate(sql);
   }
 
@@ -44,9 +48,8 @@ public class Edge {
     String sql = "SELECT * FROM Edge;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Edges.add(new Edge(rs.getString("edgeID"),
-              rs.getString("startNode"),
-              rs.getString("endNode")));
+      Edges.add(
+          new Edge(rs.getString("edgeID"), rs.getString("startNode"), rs.getString("endNode")));
     }
     return Edges;
   }
