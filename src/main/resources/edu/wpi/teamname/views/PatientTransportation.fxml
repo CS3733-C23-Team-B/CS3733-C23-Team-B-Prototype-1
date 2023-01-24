@@ -17,7 +17,7 @@
             <Insets top="7.0" />
          </BorderPane.margin>
          <children>
-            <Text fx:id="requestTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Transportation Request">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Transportation Request">
                <font>
                   <Font size="30.0" />
                </font>
@@ -31,7 +31,7 @@
    <bottom>
       <VBox fx:id="pageVBox" alignment="CENTER" prefHeight="546.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <Text fx:id="employeeInfoSubtitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Information">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Information">
                <font>
                   <Font size="24.0" />
                </font>
@@ -61,8 +61,8 @@
             </HBox>
             <HBox fx:id="labels2" alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="567.0" spacing="105.0">
                <children>
-                  <Text fx:id="employeeIdLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
-                  <Text fx:id="emailLabels" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
                </children>
                <VBox.margin>
                   <Insets bottom="5.0" left="33.0" top="15.0" />
@@ -80,7 +80,7 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Text fx:id="requestInfoSubtitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Information">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Request Information">
                <font>
                   <Font size="24.0" />
                </font>
@@ -92,8 +92,8 @@
                <children>
                   <HBox spacing="86.0">
                      <children>
-                        <Text fx:id="cleanUpLocationLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment Needed" />
-                        <Text fx:id="urgencyLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgency of Transportation" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment Needed" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Urgency of Transportation" />
                      </children>
                      <padding>
                         <Insets left="35.0" />
