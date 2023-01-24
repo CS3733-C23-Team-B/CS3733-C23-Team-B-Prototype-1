@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="computerServiceBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.sanitationServiceController">
+<BorderPane fx:id="computerServiceBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.computerServicesController">
    <bottom>
       <VBox fx:id="pageVBox" alignment="CENTER" prefHeight="524.0" prefWidth="583.0" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -86,8 +86,8 @@
             </HBox>
             <HBox prefHeight="31.0" prefWidth="700.0" spacing="40.0">
                <children>
-                  <TextField fx:id="cleanUpLocationField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
-                  <ChoiceBox fx:id="urgencyBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                  <TextField fx:id="roomNumberField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="typeOfIssueBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
                </children>
                <padding>
                   <Insets left="17.0" />
@@ -111,8 +111,8 @@
             </HBox>
             <HBox prefHeight="26.0" prefWidth="700.0" spacing="40.0">
                <children>
-                  <ChoiceBox fx:id="typeOfCleanUpBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
-                  <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="300.0" />
+                  <ChoiceBox fx:id="typeOfDeviceBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" />
+                  <TextField fx:id="notesField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="300.0" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="17.0" />

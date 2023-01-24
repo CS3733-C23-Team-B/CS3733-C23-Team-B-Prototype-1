@@ -122,7 +122,7 @@ public class sanitationServiceController {
     csvWriter writer = new csvWriter();
     writer.writeCsv("sanitationService", saveInfo);
 
-//    System.out.println(saveInfo);
+    //    System.out.println(saveInfo);
     //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
     // typeOfCleanUp};
     // save this to csv
