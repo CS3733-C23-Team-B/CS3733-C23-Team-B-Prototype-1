@@ -10,22 +10,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Controller {
-  @FXML Button ClickButton; // fx:ID of the button in the ExampleFXML
-  @FXML private Button featureOneButton;
-  @FXML private Button featureTwoButton;
   @FXML private Button homeButton;
-  @FXML private MenuItem exitButton;
   @FXML private BorderPane border;
   @FXML private Button signInButton;
-  @FXML private MenuButton menuButton;
 
-  private Connection connection = null; // connection to database
+  private Connection connection = null;
 
   /** Method run when controller is initializes */
   public void initialize() {
@@ -73,9 +66,9 @@ public class Controller {
     border.setCenter(root);
   }
 
-  public void featureThreeButtonClicked() throws IOException {
+  public void handleDatabaseClick() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
