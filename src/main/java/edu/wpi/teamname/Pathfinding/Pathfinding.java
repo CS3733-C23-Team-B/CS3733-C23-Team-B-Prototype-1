@@ -13,7 +13,7 @@ public class Pathfinding {
   static {
     try {
       edges = Edge.getAll();
-//      nodes = Node.getAll();
+      nodes = Node.getAll();
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
@@ -23,11 +23,21 @@ public class Pathfinding {
 //    System.out.println(generatePath("a", "g"));
   }
 
-  private double getWeight(Edge edge)
-  {
+  private static double getWeight(Edge edge) {
     Node node1 = nodes.get(edge.getStartNode());
     Node node2 = nodes.get(edge.getEndNode());
 
+    return getDist(node1, node2);
+  }
+
+  private static double getWeight(String n1, String n2) {
+    Node node1 = nodes.get(n1);
+    Node node2 = nodes.get(n2);
+
+    return getDist(node1, node2);
+  }
+
+  private static double getDist(Node node1, Node node2) {
     double x1 = node1.getXcoord();
     double x2 = node2.getXcoord();
     double y1 = node1.getYcoord();
@@ -109,6 +119,40 @@ public class Pathfinding {
   }
 
   private static String getShortestPathA(String start, String end) {
-    return "";
+    PriorityQueue<GraphNode> queue = new PriorityQueue<GraphNode>();
+    queue.add(new GraphNode(start, 0));
+
+    HashMap<String, String> cameFrom = new HashMap<String, String>();
+    HashMap<String, Double> costSoFar = new HashMap<String, Double>();
+    cameFrom.put(start, null);
+    costSoFar.put(start, 0.0);
+
+    while (!queue.isEmpty()) {
+      String current = queue.poll().getNodeID();
+
+      if (current.equals(end))
+        break;
+
+      for (String next : getDirectPaths(current)) {
+        double newCost = costSoFar.get(current) + getWeight(current, next);
+        if (!costSoFar.containsKey(next) || newCost < costSoFar.get(next)) {
+          costSoFar.put(next, newCost);
+          double priority = newCost + getWeight(end, next);
+          queue.add(new GraphNode(next, priority));
+          cameFrom.put(next, current);
+        }
+      }
+    }
+
+    ArrayList<String> path = new ArrayList<>();
+    path.add(start);
+
+    String current = end;
+    while (!current.equals(start)) {
+      path.add(1, current);
+      current = cameFrom.get(current);
+    }
+
+    return pathToString(path);
   }
 }
