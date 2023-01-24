@@ -16,6 +16,7 @@
             <MenuButton id="menuIcon" fx:id="menuButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
               <items>
                 <MenuItem mnemonicParsing="false" text="Help" />
+                <MenuItem mnemonicParsing="false" text="Profile" />
                 <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonClicked" text="Exit Application" />
               </items>
             </MenuButton>
