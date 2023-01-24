@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,15 +14,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Controller {
-  @FXML Button ClickButton; // fx:ID of the button in the ExampleFXML
-  @FXML private Button featureOneButton;
-  @FXML private Button featureTwoButton;
   @FXML private Button homeButton;
-  @FXML private Button exitButton;
   @FXML private BorderPane border;
   @FXML private Button signInButton;
 
-  private Connection connection = null; // connection to database
+  private Connection connection = null;
 
   /** Method run when controller is initializes */
   public void initialize() {
@@ -31,17 +26,7 @@ public class Controller {
     //    if (this.connectToDB()) {
     //      this.createTable();
     //    }
-  }
 
-  /**
-   * When the button is clicked, the method will log the data in the terminal and database
-   *
-   * @param actionEvent event that triggered method
-   * @throws IOException
-   */
-  public void buttonClicked(ActionEvent actionEvent) throws IOException {
-    System.out.println("Button was clicked");
-    System.out.println(this.logData() ? "Data logged" : "Data NOT logged");
   }
 
   public void signInButtonClicked() throws IOException {
@@ -81,9 +66,9 @@ public class Controller {
     border.setCenter(root);
   }
 
-  public void featureThreeButtonClicked() throws IOException {
+  public void handleDatabaseClick() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature3.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
@@ -96,7 +81,7 @@ public class Controller {
   }
 
   public void exitButtonClicked() throws IOException {
-    Stage stage = (Stage) exitButton.getScene().getWindow();
+    Stage stage = (Stage) homeButton.getScene().getWindow();
     stage.close();
   }
 
