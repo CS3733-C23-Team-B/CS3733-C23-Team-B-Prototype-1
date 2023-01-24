@@ -20,15 +20,17 @@ import javafx.stage.Stage;
 public class DatabaseController {
   @FXML Button nodeSearchButton;
   @FXML ChoiceBox nodeChange;
+  @FXML Button submitChange;
 
   /** Method run when controller is initialized */
   public void initialize() {
     nodeSearchButton.setOnAction((actionEvent) -> getData());
     nodeChange.setItems(getNodes());
+    submitChange.setOnAction((actionEvent) -> changeCoords());
   }
 
   /** Inserts thing into database */
-  private void addData() {
+  private void changeCoords() {
     //    //Node thing = new Node();
     //    try {
     //     thing.insert();
@@ -36,6 +38,7 @@ public class DatabaseController {
     //      e.printStackTrace();
     //    }
 
+    System.out.println("bruhhh");
   }
 
   /** Queries data from database, displays in list */
