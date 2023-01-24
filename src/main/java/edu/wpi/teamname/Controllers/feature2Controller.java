@@ -10,12 +10,11 @@ import javafx.scene.control.TextField;
 
 public class feature2Controller {
   // Lists for choiceboxes
-  ObservableList<String> cleanUpLocationList =
-      FXCollections.observableArrayList("107", "204", "302");
   ObservableList<String> urgencyList =
-      FXCollections.observableArrayList("low", "moderate", "high", "needs immediate attention");
+      FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
   ObservableList<String> typeOfCleanUpList =
-      FXCollections.observableArrayList("spill", "vancant room", "bathroom");
+      FXCollections.observableArrayList("Bathroom", "Spill", "Vacant Room");
+  /*
   ObservableList<String> areaOfCleanUpList =
       FXCollections.observableArrayList(
           "patient room",
@@ -26,16 +25,16 @@ public class feature2Controller {
           "stock room",
           "public space",
           "other");
+   */
 
   // page attributes from fxml
   @FXML private TextField firstNameField;
   @FXML private TextField lastNameField;
   @FXML private TextField employeeIDField;
   @FXML private TextField emailField;
-  @FXML private ChoiceBox cleanUpLocationBox;
+  @FXML private TextField cleanUpLocationField;
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
-  @FXML private ChoiceBox areaOfCleanUpBox;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
   @FXML private Button helpButton;
@@ -44,10 +43,8 @@ public class feature2Controller {
   @FXML
   public void initialize() {
     // intialization goes here
-    cleanUpLocationBox.setItems(cleanUpLocationList);
     urgencyBox.setItems(urgencyList);
     typeOfCleanUpBox.setItems(typeOfCleanUpList);
-    areaOfCleanUpBox.setItems(areaOfCleanUpList);
   }
 
   public void clearButtonClicked() throws IOException {
@@ -62,15 +59,14 @@ public class feature2Controller {
     lastNameField.clear();
     employeeIDField.clear();
     emailField.clear();
+    cleanUpLocationField.clear();
   }
 
   private void resetChoiceBoxes() throws IOException {
     // clear choices
     // not sure if this function is the right one to clear it yet
-    cleanUpLocationBox.valueProperty().set(null);
     urgencyBox.valueProperty().set(null);
     typeOfCleanUpBox.valueProperty().set(null);
-    areaOfCleanUpBox.valueProperty().set(null);
   }
 
   private void helpButtonClicked() {
@@ -90,12 +86,11 @@ public class feature2Controller {
     String lastName = lastNameField.getText();
     String employeeID = employeeIDField.getText();
     String email = emailField.getText();
+    String location = cleanUpLocationField.getText();
 
     // retrieve choicebox values
-    String cleanUpLocation = (String) cleanUpLocationBox.getValue();
     String urgency = (String) urgencyBox.getValue();
     String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
-    String areaOfCleanUp = (String) areaOfCleanUpBox.getValue();
 
     // may need to clear fields can be done with functions made for clear
 
@@ -109,13 +104,11 @@ public class feature2Controller {
             + ","
             + email
             + ","
-            + cleanUpLocation
+            + location
             + ","
             + urgency
             + ","
             + typeOfCleanUp
-            + ","
-            + areaOfCleanUp
             + "/n";
     System.out.println(saveInfo);
     // save this to csv
