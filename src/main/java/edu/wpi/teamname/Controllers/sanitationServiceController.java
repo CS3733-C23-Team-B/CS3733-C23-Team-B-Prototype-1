@@ -42,6 +42,7 @@ public class sanitationServiceController {
   @FXML private TextField cleanUpLocationField;
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
+  @FXML private TextField additionalNotesField;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
   @FXML private Button helpButton;
@@ -67,6 +68,7 @@ public class sanitationServiceController {
     employeeIDField.clear();
     emailField.clear();
     cleanUpLocationField.clear();
+    additionalNotesField.clear();
   }
 
   private void resetChoiceBoxes() throws IOException {
@@ -121,6 +123,7 @@ public class sanitationServiceController {
     String employeeID = employeeIDField.getText();
     String email = emailField.getText();
     String location = cleanUpLocationField.getText();
+    String notes = additionalNotesField.getText();
 
     // retrieve choicebox values
     String urgency = (String) urgencyBox.getValue();
@@ -144,13 +147,15 @@ public class sanitationServiceController {
             + urgency
             + ","
             + typeOfCleanUp
+            + ","
+            + notes
             + "\n";
     csvWriter writer = new csvWriter();
     writer.writeCsv("sanitationService", saveInfo);
 
     //    System.out.println(saveInfo);
     //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
-    // typeOfCleanUp};
+    // typeOfCleanUp, notes};
     // save this to csv
 
   }
