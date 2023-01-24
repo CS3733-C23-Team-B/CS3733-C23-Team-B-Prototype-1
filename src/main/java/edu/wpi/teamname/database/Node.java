@@ -8,7 +8,7 @@ import java.util.List; // import java.util.stream.Stream;
 
 public class Node {
 
-  public static final String tableName = "Node";
+  public static final String tableName = "node";
   private String nodeID;
   private int xcoord;
   private int ycoord;
@@ -61,7 +61,7 @@ public class Node {
     String sql =
         String.join(
             " ",
-            "CREATE TABLE Node",
+            "CREATE TABLE node",
             "(nodeID CHAR(10),",
             "xcoord INTEGER,",
             "ycoord INTEGER,",
@@ -76,7 +76,7 @@ public class Node {
 
   public static List<Node> getAll() throws SQLException {
     ArrayList<Node> Nodes = new ArrayList<>();
-    String sql = "SELECT * FROM Node;";
+    String sql = "SELECT * FROM node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
       Nodes.add(
@@ -95,7 +95,7 @@ public class Node {
 
   public void insert() throws SQLException {
     String sql =
-        "INSERT INTO Node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) "
+        "INSERT INTO node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) "
             + "VALUES (?,?,?,?,?,?,?,?);";
     PreparedStatement ps = Bdb.prepareKeyGeneratingStatement(sql);
     ps.setString(1, nodeID);
@@ -115,7 +115,7 @@ public class Node {
 
   public void update() throws SQLException {
     String sql =
-        "UPDATE Node SET NodeID = ?, xcoord = ?, ycoord = ?, floor = ?, "
+        "UPDATE node SET nodeID = ?, xcoord = ?, ycoord = ?, floor = ?, "
             + "building = ?, nodeType = ?, longName = ?, shortName = ?;";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, nodeID);
@@ -130,7 +130,7 @@ public class Node {
   }
 
   public void delete() throws SQLException {
-    String sql = "DELETE FROM Node WHERE nodeID = ?";
+    String sql = "DELETE FROM node WHERE nodeID = ?";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, nodeID);
     ps.executeUpdate();
