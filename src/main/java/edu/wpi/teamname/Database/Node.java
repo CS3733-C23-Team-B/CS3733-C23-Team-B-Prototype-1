@@ -75,13 +75,8 @@ public class Node {
   }
 
   public static List<Node> getAll() throws SQLException {
-<<<<<<< Updated upstream:src/main/java/edu/wpi/teamname/Database/Node.java
-    ArrayList<Node> Nodes = new ArrayList<>();
-    String sql = "SELECT * FROM node;";
-=======
     ArrayList<Node> nodes = new ArrayList<>();
-    String sql = "SELECT * FROM Node;";
->>>>>>> Stashed changes:src/main/java/edu/wpi/teamname/database/Node.java
+    String sql = "SELECT * FROM node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
       nodes.add(

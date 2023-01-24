@@ -1,6 +1,6 @@
 package edu.wpi.teamname.Controllers;
 
-import edu.wpi.teamname.database.Node;
+import edu.wpi.teamname.Database.Node;
 import java.sql.SQLException;
 import java.util.List;
 import javafx.fxml.FXML;
@@ -43,7 +43,7 @@ public class DatabaseController {
       nodeBox.getChildren().add(new Label("Node: " + thing.getID()));
     }
     // create a scene
-    
+
     Scene scene = new Scene(nodeBox, 300, 300);
 
     Stage stage = (Stage) nodeSearchButton.getScene().getWindow();

@@ -5,11 +5,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class GetOriginalData {
 
   public ArrayList<Node> getNodesFromCSV() throws FileNotFoundException {
-
 
     File file = new File("./OriginalData.L1Nodes.csv");
     Scanner scan = new Scanner(file);
