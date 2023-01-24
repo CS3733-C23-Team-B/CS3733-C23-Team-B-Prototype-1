@@ -1,6 +1,6 @@
 package edu.wpi.teamname.Controllers;
 
-import edu.wpi.teamname.database.Thing;
+import edu.wpi.teamname.Database.Thing;
 import java.sql.SQLException;
 import java.util.List;
 import javafx.fxml.FXML;

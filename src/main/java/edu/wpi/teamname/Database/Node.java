@@ -3,9 +3,7 @@ package edu.wpi.teamname.Database;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List; // import java.util.stream.Stream;
 import java.util.Map;
 
 public class Node {
@@ -81,9 +79,17 @@ public class Node {
     String sql = "SELECT * FROM Node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Nodes.put(rs.getString("nodeID"), new Node(rs.getString("nodeID"), rs.getInt("xcoord"), rs.getInt("ycoord"),
-              rs.getString("floor"), rs.getString("building"), rs.getString("nodeType"),
-              rs.getString("longName"), rs.getString("shortName")));
+      Nodes.put(
+          rs.getString("nodeID"),
+          new Node(
+              rs.getString("nodeID"),
+              rs.getInt("xcoord"),
+              rs.getInt("ycoord"),
+              rs.getString("floor"),
+              rs.getString("building"),
+              rs.getString("nodeType"),
+              rs.getString("longName"),
+              rs.getString("shortName")));
     }
     return Nodes;
   }
@@ -151,4 +157,3 @@ public class Node {
     return floor;
   }
 }
-
