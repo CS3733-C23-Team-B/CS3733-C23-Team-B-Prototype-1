@@ -2,7 +2,6 @@ package edu.wpi.teamname.Pathfinding;
 
 import edu.wpi.teamname.Database.Edge;
 import edu.wpi.teamname.Database.Node;
-
 import java.sql.SQLException;
 import java.util.*;
 
@@ -20,11 +19,12 @@ public class Pathfinding {
   }
 
   public static void main(String[] args) {
-//    System.out.println(getShortestPath("a", "g"));
+    System.out.println(getShortestPath("CCONF001L1", "CCONF002L1"));
   }
 
   /**
    * Given an edge, evaluates the weight of the edge
+   *
    * @param edge the edge to evaluate the weight of
    * @return the weight of the edge via Euclidean distance
    */
@@ -37,6 +37,7 @@ public class Pathfinding {
 
   /**
    * Given two nodes, evaluates the weight of the edge between the two
+   *
    * @param n1 start node
    * @param n2 end node
    * @return the Euclidean distance between the two nodes
@@ -50,6 +51,7 @@ public class Pathfinding {
 
   /**
    * Calculates the Euclidean distance between two nodes
+   *
    * @param node1 start node
    * @param node2 end node
    */
@@ -58,8 +60,8 @@ public class Pathfinding {
     double x2 = node2.getXcoord();
     double y1 = node1.getYcoord();
     double y2 = node2.getYcoord();
-//    int f1 = Integer.parseInt(node1.getFloor().substring(1));
-//    int f2 = Integer.parseInt(node2.getFloor().substring(1));
+    //    int f1 = Integer.parseInt(node1.getFloor().substring(1));
+    //    int f2 = Integer.parseInt(node2.getFloor().substring(1));
 
     double dist = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     return dist;
@@ -67,16 +69,15 @@ public class Pathfinding {
 
   /**
    * Generates a list of the nodes that can be reached directly from the given node
+   *
    * @param node the node to generate paths from
    * @return a list of all nodes reachable via one edge
    */
   private static ArrayList<String> getDirectPaths(String node) {
     ArrayList<String> retList = new ArrayList<String>();
     for (Edge edge : edges) {
-      if (edge.getStartNode().equals(node))
-        retList.add(edge.getEndNode());
-      else if (edge.getEndNode().equals(node))
-        retList.add(edge.getStartNode());
+      if (edge.getStartNode().equals(node)) retList.add(edge.getEndNode());
+      else if (edge.getEndNode().equals(node)) retList.add(edge.getStartNode());
     }
     return retList;
   }
@@ -84,8 +85,7 @@ public class Pathfinding {
   private static String pathToString(ArrayList<String> path) {
     String retStr = "";
 
-    for (String a : path)
-      retStr += a + " -> ";
+    for (String a : path) retStr += a + " -> ";
 
     retStr = retStr.substring(0, retStr.length() - 4);
     return retStr;
@@ -101,7 +101,7 @@ public class Pathfinding {
     while (toExpand.size() > 0) {
 
       // Breadth-first:
-//      String current = toExpand.remove(0);
+      //      String current = toExpand.remove(0);
       // Depth-first:
       String current = toExpand.remove(toExpand.size() - 1);
 
@@ -147,8 +147,7 @@ public class Pathfinding {
     while (!queue.isEmpty()) {
       String current = queue.poll().getNodeID();
 
-      if (current.equals(end))
-        break;
+      if (current.equals(end)) break;
 
       for (String next : getDirectPaths(current)) {
         double newCost = costSoFar.get(current) + getWeight(current, next);
