@@ -17,30 +17,47 @@ public class PatientTransportationController {
   @FXML private TextField patientDestination;
   @FXML private TextField patientID;
   @FXML private TextField notes;
-
   @FXML private Button cancelButton;
-
   @FXML private Button helpButton;
-
   @FXML private Button clearButton;
   @FXML private Button submitButton;
 
+  /**
+   * Initialize the page by declaring choicebox options
+   */
   public void initialize() {
-    // intialization goes here
+    // TODO: initialize choicebox options
   }
 
+  /**
+   * Return to the home screen without saving form data
+   * @throws IOException
+   */
   public void cancelButtonClicked() throws IOException {
-    // Stuff to handle moving back to home screen
+    // TODO: copy nav bar home screen button
   }
 
+  /**
+   * Display the help page
+   * @throws IOException
+   */
   public void helpButtonClicked() throws IOException {
-    // Stuff to handle help screen
+    // TODO: stuff to handle help screen
+    // Delete?
   }
 
+  /**
+   * Remove all inputted data from the form
+   * @throws IOException
+   */
   public void clearButtonClicked() throws IOException {
-    // Stuff to handle the clearing of fields goes here
+    // TODO: set element values to empty
   };
 
+  /**
+   * Store the data from the form in a csv file and return to home screen
+   * @throws IOException
+   */
   public void submitButtonClicked() throws IOException {
     String[] inputInfo = {firstName.getText(),
             lastName.getText(),
@@ -52,5 +69,7 @@ public class PatientTransportationController {
             patientDestination.getText(),
             patientID.getText(),
             notes.getText()};
+
+    // TODO: save to CSV, return to home screen or show confirmation page
   }
 }
