@@ -51,9 +51,23 @@ public class Controller {
     border.setCenter(root);
   }
 
+  public void pathfindingClicked() throws IOException {
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Pathfinding.fxml"));
+    Parent root = loader.load();
+    border.setCenter(root);
+  }
+
   public void homeButtonClicked() throws IOException {
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+    Parent root = loader.load();
+    border.setCenter(root);
+  }
+
+  public void databaseButtonClicked() throws IOException {
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }

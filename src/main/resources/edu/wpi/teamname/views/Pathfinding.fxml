@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.PathfindingController">
+   <children>
+      <ChoiceBox fx:id="endNode" layoutX="247.0" layoutY="150.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="startNode" layoutX="247.0" layoutY="107.0" prefWidth="150.0" />
+      <Button fx:id="pathfind" layoutX="247.0" layoutY="200.0" mnemonicParsing="false" text="Find Fastest Path" />
+      <Label layoutX="198.0" layoutY="27.0" text="Pathfinding ">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="153.0" layoutY="111.0" text="Starting Node:" />
+      <Label layoutX="156.0" layoutY="154.0" text="Ending Node:" />
+      <Label fx:id="pathLabel" layoutX="156.0" layoutY="257.0" />
+   </children>
+</AnchorPane>
