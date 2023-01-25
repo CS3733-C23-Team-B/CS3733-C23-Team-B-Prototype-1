@@ -116,17 +116,18 @@ public class Node {
 
   public void update() throws SQLException {
     String sql =
-        "UPDATE node SET nodeID = ?, xcoord = ?, ycoord = ?, floor = ?, "
-            + "building = ?, nodeType = ?, longName = ?, shortName = ?;";
+        "UPDATE node SET xcoord = ?, ycoord = ?, floor = ?, "
+            + "building = ?, nodeType = ?, longName = ?, shortName = ?," +
+                "WHERE nodeID = '?';";
     PreparedStatement ps = Bdb.prepareStatement(sql);
-    ps.setString(1, nodeID);
-    ps.setInt(2, xcoord);
-    ps.setInt(3, ycoord);
-    ps.setString(4, floor);
-    ps.setString(5, building);
-    ps.setString(6, nodeType);
-    ps.setString(7, longName);
-    ps.setString(8, shortName);
+    ps.setString(8, nodeID);
+    ps.setInt(1, xcoord);
+    ps.setInt(2, ycoord);
+    ps.setString(3, floor);
+    ps.setString(4, building);
+    ps.setString(5, nodeType);
+    ps.setString(6, longName);
+    ps.setString(7, shortName);
     ps.executeUpdate();
   }
 
