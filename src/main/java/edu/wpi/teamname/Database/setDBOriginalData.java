@@ -1,9 +1,17 @@
 package edu.wpi.teamname.Database;
 
+/*
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+*/
 public class setDBOriginalData {
 
-  /* use this function to reset database if needed
+  /* use this function to reset database if needed */
 
+    /*
   public static void main(String[] args) throws FileNotFoundException, SQLException {
 
     File sqlFile =
@@ -16,6 +24,5 @@ public class setDBOriginalData {
     }
     scan.close();
   }
-
   */
 }
