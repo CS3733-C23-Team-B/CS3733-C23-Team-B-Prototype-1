@@ -29,11 +29,18 @@ public class DatabaseController {
   public void initialize() {
     nodeSearchButton.setOnAction((actionEvent) -> getData());
     nodeChange.setItems(getNodes());
-    submitChange.setOnAction((actionEvent) -> changeCoords());
+    submitChange.setOnAction(
+        (actionEvent) -> {
+          try {
+            changeCoords();
+          } catch (SQLException e) {
+            throw new RuntimeException(e);
+          }
+        });
   }
 
   /** Inserts thing into database */
-  private void changeCoords() {
+  private void changeCoords() throws SQLException {
     Map<String, Node> nodes;
     try {
       nodes = Node.getAll();
