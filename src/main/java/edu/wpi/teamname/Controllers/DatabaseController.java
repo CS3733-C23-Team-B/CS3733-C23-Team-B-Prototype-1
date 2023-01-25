@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -21,6 +22,8 @@ public class DatabaseController {
   @FXML Button nodeSearchButton;
   @FXML ChoiceBox nodeChange;
   @FXML Button submitChange;
+  @FXML TextField xCoord;
+  @FXML TextField yCoord;
 
   /** Method run when controller is initialized */
   public void initialize() {
@@ -31,14 +34,16 @@ public class DatabaseController {
 
   /** Inserts thing into database */
   private void changeCoords() {
-    //    //Node thing = new Node();
-    //    try {
-    //     thing.insert();
-    //    } catch (SQLException e) {
-    //      e.printStackTrace();
-    //    }
-
-    System.out.println("bruhhh");
+    Map<String, Node> nodes;
+    try {
+      nodes = Node.getAll();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    System.out.println(nodeChange.getValue());
+    Node n = nodes.get(nodeChange.getValue());
+    n.setCoords(Integer.parseInt(xCoord.getText()), Integer.parseInt(yCoord.getText()));
+    System.out.println("coordinates changed.");
   }
 
   /** Queries data from database, displays in list */
