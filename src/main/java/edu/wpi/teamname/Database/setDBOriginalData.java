@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class setDBOriginalData {
@@ -26,6 +25,5 @@ public class setDBOriginalData {
     File edgeFile = new File("./OriginalData.L1EdgesSQL.csv");
     runSQL(nodeFile);
     runSQL(edgeFile);
-
   }
 }
