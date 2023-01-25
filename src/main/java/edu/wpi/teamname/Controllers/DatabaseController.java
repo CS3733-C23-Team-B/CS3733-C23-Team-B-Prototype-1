@@ -89,7 +89,9 @@ public class DatabaseController {
       throw new RuntimeException(ex);
     }
     root.setId("pane");
+
     Scene scene = new Scene(root, 800, 600);
+    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
     stage.setScene(scene);
     stage.show();
   }
