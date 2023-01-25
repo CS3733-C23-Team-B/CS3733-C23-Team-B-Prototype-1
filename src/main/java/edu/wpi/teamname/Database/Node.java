@@ -117,7 +117,7 @@ public class Node {
   public void update() throws SQLException {
     String sql =
         "UPDATE node SET xcoord = ?, ycoord = ?, floor = ?, "
-            + "building = ?, nodeType = ?, longName = ?, shortName = ?," +
+            + "building = ?, nodeType = ?, longName = ?, shortName = ?" +
                 "WHERE nodeID = '?';";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(8, nodeID);
