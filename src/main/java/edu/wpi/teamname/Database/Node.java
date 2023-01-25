@@ -116,9 +116,10 @@ public class Node {
 
   public void update() throws SQLException {
     String sql =
-        "UPDATE node SET xcoord = ?, ycoord = ?, floor = ?, "
-            + "building = ?, nodeType = ?, longName = ?, shortName = ?" +
-                " WHERE nodeID = '?';";
+        "UPDATE node "
+            + "SET xcoord = ?, ycoord = ?, floor = ?, "
+            + "building = ?, nodeType = ?, longName = ?, shortName = ? "
+            + "WHERE nodeID = ?;";
 
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(8, nodeID);
@@ -194,7 +195,7 @@ public class Node {
   }
 
   public void setShortName(String newName) throws SQLException {
-    if(newName.length() > 40) {
+    if (newName.length() > 40) {
       System.out.println("Error, new name is too long (max 40)");
     } else {
       shortName = newName;
