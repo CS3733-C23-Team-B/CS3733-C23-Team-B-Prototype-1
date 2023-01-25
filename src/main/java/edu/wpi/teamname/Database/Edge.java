@@ -100,4 +100,18 @@ public class Edge {
   public String getEndNode() {
     return endNode;
   }
+
+  public String getInfo() {
+
+    String str =
+            "Edge: "
+            + edgeID
+            + ", "
+            + "Start Node: "
+            + startNode
+            + ", "
+            + "End Node: "
+            + endNode;
+    return str;
+  }
 }
