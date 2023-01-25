@@ -68,8 +68,7 @@ public class Edge {
   }
 
   public void update() throws SQLException {
-    String sql = "UPDATE edge SET startNode = ?, endNode = ?"
-            +" WHERE edgeID = '?';";
+    String sql = "UPDATE edge SET startNode = ?, endNode = ?," + " WHERE edgeID = '?';";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(3, edgeID);
     ps.setString(1, startNode);
