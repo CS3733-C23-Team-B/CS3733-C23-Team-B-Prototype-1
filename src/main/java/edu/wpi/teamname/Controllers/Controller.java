@@ -64,7 +64,7 @@ public class Controller {
 
   public void featureOneButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature1.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/PatientTransportation.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
