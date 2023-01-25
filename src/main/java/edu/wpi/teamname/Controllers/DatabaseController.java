@@ -65,11 +65,9 @@ public class DatabaseController {
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
-    System.out.println(nodeChange.getValue());
     Node n = nodes.get(nodeChange.getValue());
 
     n.setCoords(Integer.parseInt(xCoord.getText()), Integer.parseInt(yCoord.getText()));
-    System.out.println("coordinates changed.");
   }
 
   public void exitButtonClicked() throws IOException {
@@ -97,13 +95,11 @@ public class DatabaseController {
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
-    System.out.println(nodeChange.getValue());
     Node n = nodes.get(nodeChange.getValue());
     String newLoc = locationField.getText();
     if (newLoc.length() > 0) {
       n.setShortName(newLoc);
-      System.out.println("Location Changed");
-    } else System.out.println("No new Location String");
+    };
   }
 
   /** Queries data from database, displays in list */

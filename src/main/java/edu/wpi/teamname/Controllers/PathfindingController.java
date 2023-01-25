@@ -35,7 +35,6 @@ public class PathfindingController {
     Node start = nodes.get(startNode.getValue());
     Node end = nodes.get(endNode.getValue());
     String path = getShortestPath(start.getID(), end.getID());
-    System.out.println(path);
     pathLabel.setText("Path: " + path);
   }
 
