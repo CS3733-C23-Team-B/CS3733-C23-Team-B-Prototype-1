@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Node {
 
-  public static final String tableName = "Node";
+  public static final String tableName = "node";
   private String nodeID;
   private int xcoord;
   private int ycoord;
@@ -61,7 +61,7 @@ public class Node {
     String sql =
         String.join(
             " ",
-            "CREATE TABLE Node",
+            "CREATE TABLE node",
             "(nodeID CHAR(10),",
             "xcoord INTEGER,",
             "ycoord INTEGER,",
@@ -75,11 +75,11 @@ public class Node {
   }
 
   public static Map<String, Node> getAll() throws SQLException {
-    HashMap<String, Node> Nodes = new HashMap<String, Node>();
+    HashMap<String, Node> nodes = new HashMap<String, Node>();
     String sql = "SELECT * FROM Node;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
-      Nodes.put(
+      nodes.put(
           rs.getString("nodeID"),
           new Node(
               rs.getString("nodeID"),
@@ -91,12 +91,12 @@ public class Node {
               rs.getString("longName"),
               rs.getString("shortName")));
     }
-    return Nodes;
+    return nodes;
   }
 
   public void insert() throws SQLException {
     String sql =
-        "INSERT INTO Node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) "
+        "INSERT INTO node (nodeID, xcoord, ycoord, floor, building, nodeType, longName, shortName) "
             + "VALUES (?,?,?,?,?,?,?,?);";
     PreparedStatement ps = Bdb.prepareKeyGeneratingStatement(sql);
     ps.setString(1, nodeID);
@@ -116,22 +116,25 @@ public class Node {
 
   public void update() throws SQLException {
     String sql =
-        "UPDATE Node SET NodeID = ?, xcoord = ?, ycoord = ?, floor = ?, "
-            + "building = ?, nodeType = ?, longName = ?, shortName = ?;";
+        "UPDATE node "
+            + "SET xcoord = ?, ycoord = ?, floor = ?, "
+            + "building = ?, nodeType = ?, longName = ?, shortName = ? "
+            + "WHERE nodeID = ?;";
+
     PreparedStatement ps = Bdb.prepareStatement(sql);
-    ps.setString(1, nodeID);
-    ps.setInt(2, xcoord);
-    ps.setInt(3, ycoord);
-    ps.setString(4, floor);
-    ps.setString(5, building);
-    ps.setString(6, nodeType);
-    ps.setString(7, longName);
-    ps.setString(8, shortName);
+    ps.setString(8, nodeID);
+    ps.setInt(1, xcoord);
+    ps.setInt(2, ycoord);
+    ps.setString(3, floor);
+    ps.setString(4, building);
+    ps.setString(5, nodeType);
+    ps.setString(6, longName);
+    ps.setString(7, shortName);
     ps.executeUpdate();
   }
 
   public void delete() throws SQLException {
-    String sql = "DELETE FROM Node WHERE nodeID = ?";
+    String sql = "DELETE FROM node WHERE nodeID = ?";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, nodeID);
     ps.executeUpdate();
@@ -155,5 +158,49 @@ public class Node {
 
   public String getFloor() {
     return floor;
+  }
+
+  public String getInfo() {
+    String str =
+        "Node: "
+            + nodeID
+            + ", "
+            + "X: "
+            + xcoord
+            + ", "
+            + "Y: "
+            + ycoord
+            + ", "
+            + "Floor: "
+            + floor
+            + ", "
+            + "Building: "
+            + building
+            + ", "
+            + "Node Type: "
+            + nodeType
+            + ", "
+            + "Long Name: "
+            + longName
+            + ", "
+            + "Short Name: "
+            + shortName;
+    return str;
+  }
+
+  public void setCoords(int newX, int newY) throws SQLException {
+    xcoord = newX;
+    ycoord = newY;
+    update();
+  }
+
+  public void setShortName(String newName) throws SQLException {
+    if (newName.length() > 40) {
+      System.out.println("Error, new name is too long (max 40)");
+      return;
+    } else {
+      shortName = newName;
+      update();
+    }
   }
 }

@@ -8,7 +8,7 @@ import java.util.List; // import java.util.stream.Stream;
 
 public class Edge {
 
-  public static final String tableName = "Edge";
+  public static final String tableName = "edge";
   private String edgeID;
 
   private String startNode;
@@ -33,7 +33,7 @@ public class Edge {
     String sql =
         String.join(
             " ",
-            "CREATE TABLE Edge",
+            "CREATE TABLE edge",
             "(edgeID CHAR(10),",
             "startNode CHAR(10),",
             "endNode CHAR(10),",
@@ -45,7 +45,7 @@ public class Edge {
 
   public static List<Edge> getAll() throws SQLException {
     ArrayList<Edge> Edges = new ArrayList<>();
-    String sql = "SELECT * FROM Edge;";
+    String sql = "SELECT * FROM edge;";
     ResultSet rs = Bdb.processQuery(sql);
     while (rs.next()) {
       Edges.add(
@@ -55,7 +55,7 @@ public class Edge {
   }
 
   public void insert() throws SQLException {
-    String sql = "INSERT INTO Edge (edgeID, startNode, endNode) VALUES (?,?,?);";
+    String sql = "INSERT INTO edge (edgeID, startNode, endNode) VALUES (?,?,?);";
     PreparedStatement ps = Bdb.prepareKeyGeneratingStatement(sql);
     ps.setString(1, edgeID);
     ps.setString(2, startNode);
@@ -68,16 +68,18 @@ public class Edge {
   }
 
   public void update() throws SQLException {
-    String sql = "UPDATE Edge SET edgeID = ?, startNode = ?, endNode = ?;";
+
+    String sql = "UPDATE edge SET startNode = ?, endNode = ? WHERE edgeID = ?;";
+
     PreparedStatement ps = Bdb.prepareStatement(sql);
-    ps.setString(1, edgeID);
-    ps.setString(2, startNode);
-    ps.setString(3, endNode);
+    ps.setString(3, edgeID);
+    ps.setString(1, startNode);
+    ps.setString(2, endNode);
     ps.executeUpdate();
   }
 
   public void delete() throws SQLException {
-    String sql = "DELETE FROM Edge WHERE edgeID = ?";
+    String sql = "DELETE FROM edge WHERE edgeID = ?";
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(1, edgeID);
     ps.executeUpdate();
@@ -97,5 +99,12 @@ public class Edge {
 
   public String getEndNode() {
     return endNode;
+  }
+
+  public String getInfo() {
+
+    String str =
+        "Edge: " + edgeID + ", " + "Start Node: " + startNode + ", " + "End Node: " + endNode;
+    return str;
   }
 }

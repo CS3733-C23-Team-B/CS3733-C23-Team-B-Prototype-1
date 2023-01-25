@@ -1,5 +1,7 @@
 package edu.wpi.teamname.Database;
 
+import edu.wpi.teamname.Bapp;
+import edu.wpi.teamname.dataApp;
 import java.sql.*;
 
 public class Bdb {
@@ -27,15 +29,16 @@ public class Bdb {
   }
 
   public void init() throws SQLException {
-    if (!tableExists(Thing.getTableName())) {
-      Thing.initTable();
-    }
+    // if (!tableExists(Thing.getTableName())) {
+    //   Thing.initTable();
+    // }
     if (!tableExists(Node.getTableName())) {
+      String n = Node.getTableName();
       Node.initTable();
     }
-    if (!tableExists(Edge.getTableName())) {
-      Edge.initTable();
-    }
+    // if (!tableExists(Edge.getTableName())) {
+    //  Edge.initTable();
+    // }
   }
 
   public static PreparedStatement prepareStatement(String s) throws SQLException {
@@ -83,5 +86,9 @@ public class Bdb {
 
   public static Bdb getInstance() {
     return db;
+  }
+
+  public static void main(String[] args) {
+    Bapp.launch(dataApp.class, args);
   }
 }
