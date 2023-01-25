@@ -80,8 +80,8 @@ public class sanitationServiceController {
     FXMLLoader loader2 =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
     Parent root2 = loader2.load();
-    BorderPane b = (BorderPane) helpButton.getScene().getRoot();
-    b.setCenter(root2);
+    root2.setId("pane");
+    helpButton.getScene().setRoot(root2);
   }
 
   /*
