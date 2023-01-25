@@ -26,4 +26,11 @@ public class setDBOriginalData {
     runSQL(nodeFile);
     runSQL(edgeFile);
   }
+
+  public void clearDB() throws SQLException {
+    PreparedStatement ps1 = Bdb.prepareStatement("DROP TABLE edge");
+    ps1.executeUpdate();
+    PreparedStatement ps2 = Bdb.prepareStatement("DROP TABLE node");
+    ps2.executeUpdate();
+  }
 }
