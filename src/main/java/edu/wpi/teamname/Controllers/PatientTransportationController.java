@@ -37,9 +37,9 @@ public class PatientTransportationController {
   private ArrayList<TextField> textFields;
   private ArrayList<ChoiceBox> choiceBoxes;
 
-  ObservableList<String> equipmentOptions =
+  private ObservableList<String> equipmentOptions =
       FXCollections.observableArrayList("Stretcher", "Wheelchair", "Restraints", "Stair Chair");
-  ObservableList<String> urgencyOptions =
+  private ObservableList<String> urgencyOptions =
       FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
 
   /** Initialize the page by declaring choicebox options */
@@ -67,9 +67,9 @@ public class PatientTransportationController {
       if (c instanceof ChoiceBox) choiceBoxes.add((ChoiceBox) c);
     }
 
+    // Initialize the choice boxes with their options
     equipmentNeeded.setItems(equipmentOptions);
     urgency.setItems(urgencyOptions);
-    // TODO: initialize choicebox options
   }
 
   /**
@@ -92,7 +92,6 @@ public class PatientTransportationController {
    */
   public void helpButtonClicked() throws IOException {
     // TODO: stuff to handle help screen
-    // Delete?
   }
 
   /**
