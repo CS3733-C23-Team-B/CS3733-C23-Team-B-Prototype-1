@@ -7,12 +7,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 public class sanitationServiceController {
   // Lists for choiceboxes
@@ -35,7 +33,6 @@ public class sanitationServiceController {
 
   // page attributes from fxml
   @FXML private BorderPane feature2BorderPane;
-  @FXML private BorderPane sanitationHelpPageBorder;
   @FXML private TextField firstNameField;
   @FXML private TextField lastNameField;
   @FXML private TextField employeeIDField;
@@ -80,33 +77,30 @@ public class sanitationServiceController {
   }
 
   public void helpButtonClicked() throws IOException {
-    FXMLLoader loader =
+    FXMLLoader loader2 =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
-    Parent root = loader.load();
-    sanitationHelpPageBorder.setCenter(root);
+    Parent root2 = loader2.load();
+    BorderPane b = (BorderPane) helpButton.getScene().getRoot();
+    b.setCenter(root2);
   }
 
+  /*
+   private void helpButtonClicked(ActionEvent event) throws Exception {
+     Parent sanitationHelp =
+         FXMLLoader.load(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
+     Scene scene = new Scene(sanitationHelp);
+     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+     window.setScene(scene);
+     window.show();
+   }
+  */
+
   public void cancelButtonClicked() throws IOException {
-    Stage stage = (Stage) cancelButton.getScene().getWindow();
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
-    Parent root = loader.load();
-    root.setId("pane");
-    Scene scene = new Scene(root, 800, 600);
-    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
-    // locking the stage size
-    stage.setMinHeight(600);
-    stage.setMinWidth(800);
-    stage.setMaxHeight(600);
-    stage.setMaxWidth(800);
-
-    stage.setScene(scene);
-    stage.show();
-
-    FXMLLoader homeLoader =
+    FXMLLoader loader2 =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
-    feature2BorderPane = (BorderPane) root;
-    feature2BorderPane.setCenter(homeLoader.load());
+    Parent root2 = loader2.load();
+    BorderPane b = (BorderPane) cancelButton.getScene().getRoot();
+    b.setCenter(root2);
   }
 
   @FXML
