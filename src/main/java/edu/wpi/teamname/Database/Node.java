@@ -185,8 +185,9 @@ public class Node {
     return str;
   }
 
-  public void setCoords(int newX, int newY) {
+  public void setCoords(int newX, int newY) throws SQLException {
     xcoord = newX;
     ycoord = newY;
+    update();
   }
 }
