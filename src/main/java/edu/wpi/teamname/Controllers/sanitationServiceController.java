@@ -80,6 +80,7 @@ public class sanitationServiceController {
 
   private void helpButtonClicked() {
     // stuff for help button goes here
+
   }
   /*
   public void cancelButtonClicked() throws IOException {
