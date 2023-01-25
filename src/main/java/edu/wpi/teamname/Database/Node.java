@@ -197,6 +197,7 @@ public class Node {
   public void setShortName(String newName) throws SQLException {
     if (newName.length() > 40) {
       System.out.println("Error, new name is too long (max 40)");
+      return;
     } else {
       shortName = newName;
       update();
