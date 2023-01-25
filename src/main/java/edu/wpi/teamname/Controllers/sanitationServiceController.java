@@ -35,6 +35,7 @@ public class sanitationServiceController {
 
   // page attributes from fxml
   @FXML private BorderPane feature2BorderPane;
+  @FXML private BorderPane sanitationHelpPageBorder;
   @FXML private TextField firstNameField;
   @FXML private TextField lastNameField;
   @FXML private TextField employeeIDField;
@@ -78,18 +79,12 @@ public class sanitationServiceController {
     typeOfCleanUpBox.valueProperty().set(null);
   }
 
-  private void helpButtonClicked() {
-    // stuff for help button goes here
-
-  }
-  /*
-  public void cancelButtonClicked() throws IOException {
+  public void helpButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
     Parent root = loader.load();
-    feature2BorderPane.setCenter(root);
+    sanitationHelpPageBorder.setCenter(root);
   }
-  */
 
   public void cancelButtonClicked() throws IOException {
     Stage stage = (Stage) cancelButton.getScene().getWindow();

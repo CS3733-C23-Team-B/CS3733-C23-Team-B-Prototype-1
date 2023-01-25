@@ -121,7 +121,7 @@
                         <Insets right="325.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="helpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="55.0" text="Help">
+                  <Button fx:id="helpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#helpButtonClicked" prefWidth="55.0" text="Help">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
