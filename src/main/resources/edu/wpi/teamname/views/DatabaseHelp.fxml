@@ -12,13 +12,13 @@
          <font>
             <Font size="24.0" />
          </font></Text>
-      <TextArea blendMode="MULTIPLY" editable="false" layoutX="351.0" layoutY="67.0" prefHeight="448.0" prefWidth="406.0" style="-fx-background-color: ffffff;" text="1) Select a node to edit using the&#10;     dropdown menu&#10;&#10;2)  In the box labeled &quot;xCoord&quot;,&#10;       enter the new x-coordinate&#10;      for the node&#10;&#10;3) In the box labeled &quot;yCoord&quot;,&#10;      enter the new y-coordinate&#10;      for the node&#10;&#10;4) In the box labeled &quot;Location&quot;&#10;      enter the new short name for&#10;      the node&#10;&#10;5) Press &quot;Submit&quot; to submit your&#10;     changes">
+      <TextArea blendMode="MULTIPLY" editable="false" layoutX="390.0" layoutY="80.0" prefHeight="358.0" prefWidth="243.0" style="-fx-background-color: ffffff;" text="1) Select a node to edit using the&#10;     dropdown menu&#10;&#10;2)  In the box labeled &quot;xCoord&quot;,&#10;       enter the new x-coordinate&#10;      for the node&#10;&#10;3) In the box labeled &quot;yCoord&quot;,&#10;      enter the new y-coordinate&#10;      for the node&#10;&#10;4) In the box labeled &quot;Location&quot;&#10;      enter the new short name for&#10;      the node&#10;&#10;5) Press &quot;Submit&quot; to submit your&#10;     changes">
          <font>
             <Font size="16.0" />
          </font>
       </TextArea>
       <Button fx:id="backButton" layoutX="678.0" layoutY="521.0" mnemonicParsing="false" text="Back" />
-      <Text layoutX="373.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Use the &quot;Query Nodes&quot; button to view all existing nodes*" textAlignment="CENTER" wrappingWidth="218.0540771484375">
+      <Text layoutX="402.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Use the &quot;Query Nodes&quot; button to view all existing nodes*" textAlignment="CENTER" wrappingWidth="218.0540771484375">
          <font>
             <Font size="16.0" />
          </font>
