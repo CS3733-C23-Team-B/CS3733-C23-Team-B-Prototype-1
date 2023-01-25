@@ -1,11 +1,5 @@
 package edu.wpi.teamname.Database;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Scanner;
-
 public class setDBOriginalData {
 
   /* use this function to reset database if needed

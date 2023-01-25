@@ -26,10 +26,12 @@ public class DatabaseController {
   @FXML TextField xCoord;
   @FXML TextField yCoord;
   @FXML TextField locationField;
+  @FXML Button dataHelp;
 
   /** Method run when controller is initialized */
   public void initialize() {
     nodeSearchButton.setOnAction((actionEvent) -> getData());
+    dataHelp.setOnAction((actionEvent) -> changeToHelp());
     nodeChange.setItems(getNodes());
     submitChange.setOnAction(
         (actionEvent) -> {
@@ -55,6 +57,22 @@ public class DatabaseController {
 
     n.setCoords(Integer.parseInt(xCoord.getText()), Integer.parseInt(yCoord.getText()));
     System.out.println("coordinates changed.");
+  }
+
+  private void changeToHelp() {
+    Stage stage = new Stage();
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseHelp.fxml"));
+    Parent root = null;
+    try {
+      root = loader.load();
+    } catch (IOException ex) {
+      throw new RuntimeException(ex);
+    }
+    root.setId("pane");
+    Scene scene = new Scene(root, 800, 600);
+    stage.setScene(scene);
+    stage.show();
   }
 
   private void changeLocation() throws SQLException {
