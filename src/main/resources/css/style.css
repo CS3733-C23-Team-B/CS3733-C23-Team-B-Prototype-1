@@ -15,3 +15,20 @@
     -fx-background-radius: 5px;
     -fx-background-color: rgba(163, 233, 228, 0.6);
 }
+
+#menuIcon{
+    -fx-background-radius: 30px;
+    -fx-background-image: url("/media/profile-icon.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 40 40;
+    -fx-background-position: top center;
+    -fx-background-color: black;
+}
+
+.menu-button > .arrow-button {
+    -fx-padding: 0;
+}
+
+.menu-button > .arrow-button > .arrow {
+    -fx-padding: 0;
+}
