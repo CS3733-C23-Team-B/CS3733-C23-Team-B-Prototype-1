@@ -3,7 +3,7 @@ package edu.wpi.teamname.Controllers;
 import edu.wpi.teamname.Database.Node;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,7 +45,7 @@ public class DatabaseController {
   private void getData() {
     BorderPane bor = new BorderPane();
     VBox nodeBox = new VBox();
-    List<Node> nodes;
+    Map<String, Node> nodes;
     try {
       nodes = Node.getAll();
     } catch (SQLException e) {
@@ -53,9 +53,7 @@ public class DatabaseController {
     }
     nodeBox.getChildren().clear();
     nodeBox.getChildren().add(new Label("Current Nodes:"));
-    for (Node node : nodes) {
-      nodeBox.getChildren().add(new Label(node.getInfo()));
-    }
+    nodes.forEach((key, value) -> nodeBox.getChildren().add(new Label(value.getInfo())));
     bor.setCenter(nodeBox);
     Button b = new Button();
     b.setText("Back");
@@ -104,15 +102,14 @@ public class DatabaseController {
 
   static ObservableList<String> getNodes() {
     ObservableList<String> list = FXCollections.observableArrayList();
-    List<Node> nodes;
+    Map<String, Node> nodes;
     try {
       nodes = Node.getAll();
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
-    for (Node node : nodes) {
-      list.add(node.getID());
-    }
+    nodes.forEach((key, value) -> list.add(key));
+
     return list;
   }
 }
