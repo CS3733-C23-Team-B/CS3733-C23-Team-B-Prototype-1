@@ -18,13 +18,6 @@ public class Pathfinding {
     }
   }
 
-  public static void main(String[] args) {
-    System.out.println("\n");
-    System.out.println(getShortestPath("CCONF001L1", "CREST004L1"));
-    System.out.println("\n");
-    System.out.println(getShortestPathA("CCONF001L1", "CREST004L1"));
-  }
-
   /**
    * Given an edge, evaluates the weight of the edge
    *
