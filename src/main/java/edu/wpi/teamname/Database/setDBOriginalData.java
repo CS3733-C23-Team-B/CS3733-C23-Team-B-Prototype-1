@@ -8,29 +8,20 @@ import java.util.Scanner;
 
 public class setDBOriginalData {
 
-  public void runSQL(File sqlCsv) throws FileNotFoundException, SQLException {
+  /* use this function to reset database if needed
 
-    Scanner scan = new Scanner(sqlCsv);
-    while (scan.hasNext()) {
-      String sql = scan.next();
+  public static void main(String[] args) throws FileNotFoundException, SQLException {
+
+    File sqlFile =
+        new File("src/main/java/edu/wpi/teamname/Database/OriginalData/SQLForOGData.txt");
+    Scanner scan = new Scanner(sqlFile);
+    while (scan.hasNextLine()) {
+      String sql = scan.nextLine();
       PreparedStatement ps = Bdb.prepareStatement(sql);
       ps.executeUpdate();
     }
     scan.close();
   }
 
-  public void setData() throws SQLException, FileNotFoundException {
-
-    File nodeFile = new File("./OriginalData.L1NodesSQL.csv");
-    File edgeFile = new File("./OriginalData.L1EdgesSQL.csv");
-    runSQL(nodeFile);
-    runSQL(edgeFile);
-  }
-
-  public void clearDB() throws SQLException {
-    PreparedStatement ps1 = Bdb.prepareStatement("DROP TABLE edge");
-    ps1.executeUpdate();
-    PreparedStatement ps2 = Bdb.prepareStatement("DROP TABLE node");
-    ps2.executeUpdate();
-  }
+  */
 }
