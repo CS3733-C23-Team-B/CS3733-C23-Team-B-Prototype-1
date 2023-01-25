@@ -119,6 +119,7 @@ public class Node {
         "UPDATE node SET xcoord = ?, ycoord = ?, floor = ?, "
             + "building = ?, nodeType = ?, longName = ?, shortName = ?" +
                 " WHERE nodeID = '?';";
+
     PreparedStatement ps = Bdb.prepareStatement(sql);
     ps.setString(8, nodeID);
     ps.setInt(1, xcoord);
