@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -17,7 +17,7 @@ public class Controller {
   public void signInButtonClicked() throws IOException {
     Stage stage = (Stage) signInButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Navigation.fxml"));
     Parent root = loader.load();
     root.setId("pane");
     Scene scene = new Scene(root, 800, 600);
@@ -32,42 +32,42 @@ public class Controller {
     stage.show();
 
     FXMLLoader homeLoader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
     border = (BorderPane) root;
     border.setCenter(homeLoader.load());
   }
 
   public void featureOneButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature1.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Feature1.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Feature2.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Feature2.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void pathfindingClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Pathfinding.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Pathfinding.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void homeButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void databaseButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }

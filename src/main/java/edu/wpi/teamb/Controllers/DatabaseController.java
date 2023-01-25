@@ -1,7 +1,7 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
-import edu.wpi.teamname.Database.Edge;
-import edu.wpi.teamname.Database.Node;
+import edu.wpi.teamb.Database.Edge;
+import edu.wpi.teamb.Database.Node;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -78,7 +78,7 @@ public class DatabaseController {
   private void changeToHelp() {
     BorderPane border = (BorderPane) dataHelp.getScene().getRoot();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseHelp.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseHelp.fxml"));
     Parent root;
     try {
       root = loader.load();
@@ -127,7 +127,7 @@ public class DatabaseController {
     b.setOnAction(
         e -> {
           FXMLLoader loader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
+              new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
           try {
             bor.setCenter(loader.load());
           } catch (IOException ex) {
@@ -172,7 +172,7 @@ public class DatabaseController {
     b.setOnAction(
         e -> {
           FXMLLoader loader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
+              new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
           try {
             bor.setCenter(loader.load());
           } catch (IOException ex) {

@@ -5,16 +5,9 @@ which will be stored in the build/libs folder.
 Make sure to edit the main class attribute the build.gradle file, you'll need to change it in order to obtain
 a working jar file.
 
-# Requirements
-## Java Development Kit (JDK) version 17.x
-This starter code was developed using JDK17 which can be acquired at this [link](https://www.oracle.com/java/technologies/downloads/#java17 "JDK Download")
-<br>Your submitted programs are expected to be written using this JDK and should not use other JDKs unless otherwise specified
-## MaterialFX
-MaterialFX is a JavaFX (JFX) module library for pre-made components. 
-<br>The MaterialFX Github page can be found [here](https://github.com/palexdev/MaterialFX "MaterialFX GitHub") and the corresponding Wiki with component examples can be found [here](https://github.com/palexdev/MaterialFX/wiki "MaterialFX GitHub Wiki") 
-<br>The library is a great <i>starting point</i> for UI design during the early iterations.
-
-
+## Requirements
+Java Development Kit (JDK) version 17.x
+<br>MaterialFX
 
 # Important Files
 ## build.gradle / gradle.properties
@@ -23,7 +16,7 @@ This is the gradle configuration file. Modify this file to add dependencies to y
   modification you will need to make when you begin the project
   
   - `mainClassName`
-    - Modifiy this variable to point to your main class. By default it is `edu.wpi.teamname.Main
+    - Modifiy this variable to point to your main class. By default it is `edu.wpi.teamb.Main
     `, but once you update your teamname package to your team letter you will need to update this
      path.
      
@@ -41,28 +34,3 @@ This is the gradle configuration file. Modify this file to add dependencies to y
       checks, comment out the spotless plugin as well as the spotless configuration at the bottom
        of the file
 
-## .travis.yml
-This is the Travis-CI configuration file. **Only modify this file if you are sure you know what you are doing**
-
-## lombox.config
-This is the configuration for [Lombok](https://projectlombok.org/), a very useful java library
- that makes 'enterprise' coding a breeze. **Only modify this file if you are sure you know what you are doing**
-
-## .gitignore
-This file tells git which files to ignore in the repo. It should be correctly configured already
-**Only modify this file if you are sure you know what you are doing**
-
-## .hooks/
-This directory contains a useful git hook that will force your teammates to run tests before
-pushing to github. This `pre-push` hook will run gradle tests to make sure code passes.
-
-To install these hooks, simply run `git config core.hookspath .hooks` from the root directory
-
-## config/
-Config contains styleguide config files both for checkstyle (another optional plugin for gradle
-) and for intellij. Teams should determine a style guide to follow to make 
-although it is not a requirement for this class.
-
-To install the styleguide scheme into IntelliJ, `Preferences -> Editor -> Code Style -> Scheme
- -> ... -> Import Scheme -> IntelliJ IDEA code style XML`, then select `config/intellij-java
- -google-style.xml` from the project's root directory 

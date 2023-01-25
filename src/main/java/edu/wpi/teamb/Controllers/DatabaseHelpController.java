@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ public class DatabaseHelpController {
   private void backToScene() {
     BorderPane b = (BorderPane) backButton.getScene().getRoot();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
     Parent root = null;
     try {
       root = loader.load();

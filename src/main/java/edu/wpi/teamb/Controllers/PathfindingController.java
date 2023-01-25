@@ -1,8 +1,8 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
-import static edu.wpi.teamname.Pathfinding.Pathfinding.getShortestPath;
+import static edu.wpi.teamb.Pathfinding.Pathfinding.getShortestPath;
 
-import edu.wpi.teamname.Database.Node;
+import edu.wpi.teamb.Database.Node;
 import java.sql.SQLException;
 import java.util.Map;
 import javafx.collections.FXCollections;

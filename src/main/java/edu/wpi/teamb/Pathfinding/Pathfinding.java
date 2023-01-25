@@ -1,7 +1,7 @@
-package edu.wpi.teamname.Pathfinding;
+package edu.wpi.teamb.Pathfinding;
 
-import edu.wpi.teamname.Database.Edge;
-import edu.wpi.teamname.Database.Node;
+import edu.wpi.teamb.Database.Edge;
+import edu.wpi.teamb.Database.Node;
 import java.sql.SQLException;
 import java.util.*;
 
