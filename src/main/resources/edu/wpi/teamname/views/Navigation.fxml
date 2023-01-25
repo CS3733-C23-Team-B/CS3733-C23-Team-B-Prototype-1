@@ -12,7 +12,6 @@
           <Button id="homeButton" fx:id="homeButton" mnemonicParsing="false" onAction="#homeButtonClicked" text="Home" textAlignment="CENTER" />
             <Button id="featureOneButton" fx:id="featureOneButton" mnemonicParsing="false" onAction="#featureOneButtonClicked" text="Patient Transportation" textAlignment="CENTER" />
             <Button id="featureOneButton" fx:id="featureTwoButton" mnemonicParsing="false" onAction="#featureTwoButtonClicked" text="Sanitation Services" />
-            <Button fx:id="databaseButton" mnemonicParsing="false" onAction="#handleDatabaseClick" text="Database" />
             <Separator prefHeight="43.0" prefWidth="300.0" visible="false" />
             <MenuButton id="menuIcon" fx:id="menuButton" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
               <items>

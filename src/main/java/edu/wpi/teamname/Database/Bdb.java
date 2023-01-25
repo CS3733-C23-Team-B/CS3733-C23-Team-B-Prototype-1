@@ -1,5 +1,7 @@
 package edu.wpi.teamname.Database;
 
+import edu.wpi.teamname.Bapp;
+import edu.wpi.teamname.dataApp;
 import java.sql.*;
 
 public class Bdb {
@@ -84,5 +86,9 @@ public class Bdb {
 
   public static Bdb getInstance() {
     return db;
+  }
+
+  public static void main(String[] args) {
+    Bapp.launch(dataApp.class, args);
   }
 }
