@@ -79,7 +79,7 @@ public class DatabaseController {
   }
 
   private void changeToHelp() {
-    Stage stage = new Stage();
+    Stage stage = (Stage) dataHelp.getScene().getWindow();
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseHelp.fxml"));
     Parent root = null;

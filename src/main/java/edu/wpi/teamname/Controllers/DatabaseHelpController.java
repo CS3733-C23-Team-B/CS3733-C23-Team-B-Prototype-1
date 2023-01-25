@@ -17,7 +17,7 @@ public class DatabaseHelpController {
   }
 
   private void backToScene() {
-    Stage stage = new Stage();
+    Stage stage = (Stage) backButton.getScene().getWindow();
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
     Parent root = null;
