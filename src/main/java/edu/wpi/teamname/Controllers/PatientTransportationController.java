@@ -117,7 +117,11 @@ public class PatientTransportationController {
     for (int i = 0; i < components.size(); i++) {
       Control c = components.get(i);
       if (c instanceof TextField) inputInfo[i] = ((TextField) c).getText();
-      if (c instanceof ChoiceBox) inputInfo[i] = (String) ((ChoiceBox) c).getValue();
+      if (c instanceof ChoiceBox) {
+        String s = (String) ((ChoiceBox) c).getValue();
+        if (s == null) s = "None";
+        inputInfo[i] = s;
+      }
     }
     // TODO: save to CSV, return to home screen or show confirmation page
   }
