@@ -21,7 +21,6 @@ public class dataApp extends Application {
     Parent root = FXMLLoader.load(getClass().getResource("views/DatabaseUI.fxml"));
     root.setId("pane");
     Scene scene = new Scene(root, 800, 600);
-    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
     primaryStage.setScene(scene);
     primaryStage.setTitle("Badger Crossing Health Clinic");
     primaryStage.show();

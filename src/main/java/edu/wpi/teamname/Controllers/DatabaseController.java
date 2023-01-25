@@ -25,6 +25,7 @@ public class DatabaseController {
   @FXML Button submitChange;
   @FXML TextField xCoord;
   @FXML TextField yCoord;
+  @FXML TextField locationField;
 
   /** Method run when controller is initialized */
   public void initialize() {
@@ -34,6 +35,7 @@ public class DatabaseController {
         (actionEvent) -> {
           try {
             changeCoords();
+            changeLocation();
           } catch (SQLException e) {
             throw new RuntimeException(e);
           }
@@ -50,8 +52,25 @@ public class DatabaseController {
     }
     System.out.println(nodeChange.getValue());
     Node n = nodes.get(nodeChange.getValue());
+
     n.setCoords(Integer.parseInt(xCoord.getText()), Integer.parseInt(yCoord.getText()));
     System.out.println("coordinates changed.");
+  }
+
+  private void changeLocation() throws SQLException {
+    Map<String, Node> nodes;
+    try {
+      nodes = Node.getAll();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    System.out.println(nodeChange.getValue());
+    Node n = nodes.get(nodeChange.getValue());
+    String newLoc = locationField.getText();
+    if (newLoc.length() > 0) {
+      n.setShortName(newLoc);
+      System.out.println("Location Changed");
+    } else System.out.println("No new Location String");
   }
 
   /** Queries data from database, displays in list */
@@ -79,7 +98,7 @@ public class DatabaseController {
         e -> {
           Stage stage = (Stage) nodeBox.getScene().getWindow();
           FXMLLoader loader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
           Parent root = null;
           try {
             root = loader.load();
@@ -88,9 +107,6 @@ public class DatabaseController {
           }
           root.setId("pane");
           Scene scene = new Scene(root, 800, 600);
-          scene
-              .getStylesheets()
-              .addAll(this.getClass().getResource("/css/style.css").toExternalForm());
           // locking the stage size
           stage.setMinHeight(600);
           stage.setMinWidth(800);
@@ -99,18 +115,9 @@ public class DatabaseController {
 
           stage.setScene(scene);
           stage.show();
-
-          FXMLLoader homeLoader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
-          BorderPane borderPane = (BorderPane) root;
-          try {
-            borderPane.setCenter(homeLoader.load());
-          } catch (IOException ex) {
-            throw new RuntimeException(ex);
-          }
         });
-    bor.setBottom(b);
-    Scene scene = new Scene(bor, 1000, 900);
+    nodeBox.getChildren().add(b);
+    Scene scene = new Scene(bor, 800, 800);
 
     Stage stage = (Stage) nodeSearchButton.getScene().getWindow();
     stage.setScene(scene);
