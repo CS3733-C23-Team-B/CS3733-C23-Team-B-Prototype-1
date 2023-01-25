@@ -192,4 +192,13 @@ public class Node {
     ycoord = newY;
     update();
   }
+
+  public void setShortName(String newName) throws SQLException {
+    if(newName.length() > 40) {
+      System.out.println("Error, new name is too long (max 40)");
+    } else {
+      shortName = newName;
+      update();
+    }
+  }
 }
