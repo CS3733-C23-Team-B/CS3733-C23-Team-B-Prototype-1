@@ -1,8 +1,10 @@
 package edu.wpi.teamname.Controllers;
 
+import edu.wpi.teamname.Database.Edge;
 import edu.wpi.teamname.Database.Node;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,17 +23,29 @@ import javafx.stage.Stage;
 
 public class DatabaseController {
   @FXML Button nodeSearchButton;
+  @FXML Button edgeQuery;
   @FXML ChoiceBox nodeChange;
   @FXML Button submitChange;
   @FXML TextField xCoord;
   @FXML TextField yCoord;
   @FXML TextField locationField;
   @FXML Button dataHelp;
+  @FXML Button exit;
 
   /** Method run when controller is initialized */
   public void initialize() {
-    nodeSearchButton.setOnAction((actionEvent) -> getData());
+    nodeSearchButton.setOnAction((actionEvent) -> getNodeData());
+    edgeQuery.setOnAction((actionEvent) -> getEdgeData());
     dataHelp.setOnAction((actionEvent) -> changeToHelp());
+    exit.setOnAction(
+        (actionEvent) -> {
+          try {
+            exitButtonClicked();
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        });
+
     nodeChange.setItems(getNodes());
     submitChange.setOnAction(
         (actionEvent) -> {
@@ -57,6 +71,11 @@ public class DatabaseController {
 
     n.setCoords(Integer.parseInt(xCoord.getText()), Integer.parseInt(yCoord.getText()));
     System.out.println("coordinates changed.");
+  }
+
+  public void exitButtonClicked() throws IOException {
+    Stage stage = (Stage) exit.getScene().getWindow();
+    stage.close();
   }
 
   private void changeToHelp() {
@@ -92,7 +111,7 @@ public class DatabaseController {
   }
 
   /** Queries data from database, displays in list */
-  private void getData() {
+  private void getNodeData() {
     BorderPane bor = new BorderPane();
     VBox nodeBox = new VBox();
     Map<String, Node> nodes;
@@ -125,12 +144,6 @@ public class DatabaseController {
           }
           root.setId("pane");
           Scene scene = new Scene(root, 800, 600);
-          // locking the stage size
-          stage.setMinHeight(600);
-          stage.setMinWidth(800);
-          stage.setMaxHeight(600);
-          stage.setMaxWidth(800);
-
           stage.setScene(scene);
           stage.show();
         });
@@ -154,5 +167,49 @@ public class DatabaseController {
     nodes.forEach((key, value) -> list.add(key));
 
     return list;
+  }
+
+  private void getEdgeData() {
+    BorderPane bor = new BorderPane();
+    VBox edgeBox = new VBox();
+    List<Edge> edges;
+    try {
+      edges = Edge.getAll();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    edgeBox.getChildren().clear();
+    edgeBox.getChildren().add(new Label("Current Nodes:"));
+    for (Edge e : edges) {
+      Label label = new Label(e.getInfo());
+      edgeBox.getChildren().add(label);
+      label.setFont(new Font("Arial", 10));
+    }
+    bor.setCenter(edgeBox);
+    Button b = new Button();
+    b.setText("Back");
+    b.setOnAction(
+        e -> {
+          Stage stage = (Stage) edgeBox.getScene().getWindow();
+          FXMLLoader loader =
+              new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/DatabaseUI.fxml"));
+          Parent root = null;
+          try {
+            root = loader.load();
+          } catch (IOException ex) {
+            throw new RuntimeException(ex);
+          }
+          root.setId("pane");
+          Scene scene = new Scene(root, 800, 600);
+          stage.setScene(scene);
+          stage.show();
+        });
+    edgeBox.getChildren().add(b);
+    Scene scene = new Scene(bor, 800, 800);
+
+    Stage stage = (Stage) nodeSearchButton.getScene().getWindow();
+    stage.setScene(scene);
+
+    stage.show();
   }
 }

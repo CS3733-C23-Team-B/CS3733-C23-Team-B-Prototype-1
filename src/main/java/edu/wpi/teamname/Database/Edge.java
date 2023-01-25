@@ -104,14 +104,7 @@ public class Edge {
   public String getInfo() {
 
     String str =
-            "Edge: "
-            + edgeID
-            + ", "
-            + "Start Node: "
-            + startNode
-            + ", "
-            + "End Node: "
-            + endNode;
+        "Edge: " + edgeID + ", " + "Start Node: " + startNode + ", " + "End Node: " + endNode;
     return str;
   }
 }
