@@ -29,7 +29,6 @@ public class PatientTransportationController {
   @FXML private Button helpButton;
   @FXML private Button clearButton;
   @FXML private Button submitButton;
-  @FXML private BorderPane feature1Border;
 
   // List of all text fields and choice boxes for flexibility; when adding new input components to
   // form, add to this list
@@ -79,10 +78,10 @@ public class PatientTransportationController {
    */
   public void cancelButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
     Parent root = loader.load();
-    feature1Border.setCenter(root);
-    // TODO: copy nav bar home screen button
+    BorderPane b = (BorderPane) cancelButton.getScene().getRoot();
+    b.setCenter(root);
   }
 
   /**
