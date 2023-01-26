@@ -41,6 +41,7 @@ public class CSVWriter {
 
       csv = csv + s;
       if (i != data.length - 1) csv = csv + ",";
+      else csv = csv + "\n";
     }
     return csv;
   }
