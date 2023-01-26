@@ -32,6 +32,10 @@ public class sanitationServiceController {
   @FXML private Button helpButton;
   @FXML private Button cancelButton;
 
+  private ArrayList<Control> components;
+  private ArrayList<TextField> textFields;
+  private ArrayList<ChoiceBox> choiceBoxes;
+  
   @FXML
   public void initialize() {
     // initialization goes here
