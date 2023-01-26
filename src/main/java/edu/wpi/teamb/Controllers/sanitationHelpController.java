@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ public class sanitationHelpController {
   public void backButtonClicked() throws IOException {
     Stage stage = (Stage) backButton.getScene().getWindow();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Navigation.fxml"));
     Parent root = loader.load();
     root.setId("pane");
     Scene scene = new Scene(root, 800, 600);
@@ -31,7 +31,7 @@ public class sanitationHelpController {
     stage.show();
 
     FXMLLoader homeLoader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationService.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationService.fxml"));
     BorderPane border = (BorderPane) root;
     border.setCenter(homeLoader.load());
   }

@@ -46,14 +46,28 @@ public class Controller {
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationService.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationService.fxml"));
+    Parent root = loader.load();
+    border.setCenter(root);
+  }
+
+  public void pathfindingClicked() throws IOException {
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Pathfinding.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
 
   public void homeButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
+    Parent root = loader.load();
+    border.setCenter(root);
+  }
+
+  public void databaseButtonClicked() throws IOException {
+    FXMLLoader loader =
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }

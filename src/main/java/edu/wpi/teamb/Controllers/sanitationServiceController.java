@@ -1,6 +1,6 @@
-package edu.wpi.teamname.Controllers;
+package edu.wpi.teamb.Controllers;
 
-import edu.wpi.teamname.csvWriter;
+import edu.wpi.teamb.csvWriter;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -78,7 +78,7 @@ public class sanitationServiceController {
 
   public void helpButtonClicked() throws IOException {
     FXMLLoader loader2 =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationHelpPage.fxml"));
     Parent root2 = loader2.load();
     root2.setId("pane");
     helpButton.getScene().setRoot(root2);
@@ -87,7 +87,7 @@ public class sanitationServiceController {
   /*
    private void helpButtonClicked(ActionEvent event) throws Exception {
      Parent sanitationHelp =
-         FXMLLoader.load(getClass().getResource("/edu/wpi/teamname/views/sanitationHelpPage.fxml"));
+         FXMLLoader.load(getClass().getResource("/edu/wpi/teamb/views/sanitationHelpPage.fxml"));
      Scene scene = new Scene(sanitationHelp);
      Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
      window.setScene(scene);
@@ -97,7 +97,7 @@ public class sanitationServiceController {
 
   public void cancelButtonClicked() throws IOException {
     FXMLLoader loader2 =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/HomeScreen.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
     Parent root2 = loader2.load();
     BorderPane b = (BorderPane) cancelButton.getScene().getRoot();
     b.setCenter(root2);
