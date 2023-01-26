@@ -1,7 +1,7 @@
-package edu.wpi.teamname.Pathfinding;
+package edu.wpi.teamb.Pathfinding;
 
-import edu.wpi.teamname.Database.Edge;
-import edu.wpi.teamname.Database.Node;
+import edu.wpi.teamb.Database.Edge;
+import edu.wpi.teamb.Database.Node;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -16,13 +16,6 @@ public class Pathfinding {
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  public static void main(String[] args) {
-    System.out.println("\n");
-    System.out.println(getShortestPath("CCONF001L1", "CREST004L1"));
-    System.out.println("\n");
-    System.out.println(getShortestPathA("CCONF001L1", "CREST004L1"));
   }
 
   /**
