@@ -15,7 +15,7 @@ public class setDBOriginalData {
   public static void main(String[] args) throws FileNotFoundException, SQLException {
 
     File sqlFile =
-        new File("src/main/java/edu/wpi/teamname/Database/OriginalData/SQLForOGData.txt");
+        new File("src/main/java/edu/wpi/teamb/Database/OriginalData/SQLForOGData.txt");
     Scanner scan = new Scanner(sqlFile);
     while (scan.hasNextLine()) {
       String sql = scan.nextLine();
