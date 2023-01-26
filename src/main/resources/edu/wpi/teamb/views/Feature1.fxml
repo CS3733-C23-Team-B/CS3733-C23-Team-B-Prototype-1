@@ -3,8 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 
+<<<<<<< HEAD:src/main/resources/edu/wpi/teamname/views/Feature1.fxml
 
 <Label prefHeight="111.0" prefWidth="280.0" text="Feature One Implimentation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamname.Controllers.Controller">
+=======
+<Label prefHeight="111.0" prefWidth="280.0" text="Patient Transportation" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wpi.teamb.Controllers.Controller">
+>>>>>>> main:src/main/resources/edu/wpi/teamb/views/Feature1.fxml
    <font>
       <Font size="20.0" />
    </font>
