@@ -1,7 +1,5 @@
-package edu.wpi.teamname.Database;
+package edu.wpi.teamb.Database;
 
-import edu.wpi.teamname.Bapp;
-import edu.wpi.teamname.dataApp;
 import java.sql.*;
 
 public class Bdb {
@@ -12,8 +10,6 @@ public class Bdb {
     try {
       db = new Bdb();
       db.init();
-      System.out.println(tableExists("node"));
-      System.out.println(tableExists("edge"));
     } catch (ClassNotFoundException | SQLException e) {
       throw new RuntimeException(e);
     }
@@ -86,9 +82,5 @@ public class Bdb {
 
   public static Bdb getInstance() {
     return db;
-  }
-
-  public static void main(String[] args) {
-    Bapp.launch(dataApp.class, args);
   }
 }

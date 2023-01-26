@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Database;
+package edu.wpi.teamb.Database;
 
 /*
 import java.io.File;
@@ -11,7 +11,7 @@ public class setDBOriginalData {
 
   /* use this function to reset database if needed */
 
-    /*
+  /*
   public static void main(String[] args) throws FileNotFoundException, SQLException {
 
     File sqlFile =
