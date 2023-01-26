@@ -46,7 +46,7 @@ public class Controller {
 
   public void featureTwoButtonClicked() throws IOException {
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Feature2.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationService.fxml"));
     Parent root = loader.load();
     border.setCenter(root);
   }
@@ -72,7 +72,7 @@ public class Controller {
     border.setCenter(root);
   }
 
-  public void exitButtonClicked() throws IOException {
+  public void exitButtonClicked() {
     Stage stage = (Stage) homeButton.getScene().getWindow();
     stage.close();
   }

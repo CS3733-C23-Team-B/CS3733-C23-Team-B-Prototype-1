@@ -100,7 +100,6 @@ public class DatabaseController {
     if (newLoc.length() > 0) {
       n.setShortName(newLoc);
     }
-    ;
   }
 
   /** Queries data from database, displays in list */
