@@ -6,31 +6,31 @@ Make sure to edit the main class attribute the build.gradle file, you'll need to
 a working jar file.
 
 ## Requirements
-Java Development Kit (JDK) version 17.x
-<br>MaterialFX
+<li>Java Development Kit (JDK) version 17.x
+<li>MaterialFX
 
-# Important Files
-## build.gradle / gradle.properties
-This is the gradle configuration file. Modify this file to add dependencies to your project. In
- general you should only modify the depedencies section of this file, however there are a few
-  modification you will need to make when you begin the project
+# Important Features
+Note: All features have been implemented into the application User Interface, and all
+can be found inside this jar file
+
+## <li>Front-End</li>
+<li>A user-friendly interface for navigating and interacting with the system
+<li>Forms for inputting data and making requests
+<li>Display and visualization of data and results
+
+
+## <li>Back-End</li>
+<li>integration into front end user interface (in the Database page of the application)
+<li>JDBC program that includes an ORM
+<li>User authentication and authorization (in-progress)
+<li>Ability to interact with and manipulate Nodes in real-time
+<li>Ability to query data from both Edge and Node Table
+<li>Error handling and logging
+<li>Help Display on how to use the database program
+
+
+## <li>PathFinding</li>
+<li>integration into front end user interface (in the Database page of the application)
   
-  - `mainClassName`
-    - Modifiy this variable to point to your main class. By default it is `edu.wpi.teamb.Main
-    `, but once you update your teamname package to your team letter you will need to update this
-     path.
-     
-  - jaCoCo
-    - jaCoCo is a JAva COde COverage checker that enforces testing. By default the rules are 25
-    % line coverage and 25% branch coverage, but if you would like to be more successful you
-     should raise these numbers higher to enforce team members to write more tests. Simply modify
-      the `minimum` values to enforce stricter tests (but do not change to below .25, as that is
-       the required minimum for this class)
-  - spotless
-    - spotless is a style guider checker/formatter that will automatically detect if your code
-     adheres to an agreed style guide. For this starter code I have defaulted to Google's style
-     guide, as it is well known and well liked. You can find more documentation for spotless 
-     [here](https://github.com/diffplug/spotless). If you would like to disable the spotless
-      checks, comment out the spotless plugin as well as the spotless configuration at the bottom
-       of the file
+
 
