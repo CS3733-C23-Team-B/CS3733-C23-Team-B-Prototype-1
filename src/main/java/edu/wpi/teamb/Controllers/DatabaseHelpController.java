@@ -19,7 +19,7 @@ public class DatabaseHelpController {
     BorderPane b = (BorderPane) backButton.getScene().getRoot();
     FXMLLoader loader =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
-    Parent root = null;
+    Parent root;
     try {
       root = loader.load();
     } catch (IOException ex) {
