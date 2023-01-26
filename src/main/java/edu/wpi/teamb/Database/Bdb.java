@@ -83,8 +83,4 @@ public class Bdb {
   public static Bdb getInstance() {
     return db;
   }
-
-  public static void main(String[] args) {
-    Bapp.launch(dataApp.class, args);
-  }
 }

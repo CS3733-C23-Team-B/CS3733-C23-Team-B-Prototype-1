@@ -4,9 +4,8 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
 
 public class DatabaseHelpController {
 
@@ -17,18 +16,15 @@ public class DatabaseHelpController {
   }
 
   private void backToScene() {
-    Stage stage = (Stage) backButton.getScene().getWindow();
+    BorderPane b = (BorderPane) backButton.getScene().getRoot();
     FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamname/views/Navigation.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
     Parent root = null;
     try {
       root = loader.load();
     } catch (IOException ex) {
       throw new RuntimeException(ex);
     }
-    root.setId("pane");
-    Scene scene = new Scene(root, 800, 600);
-    stage.setScene(scene);
-    stage.show();
+    b.setCenter(root);
   }
 }
