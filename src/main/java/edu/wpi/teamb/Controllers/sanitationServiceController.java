@@ -71,12 +71,7 @@ public class sanitationServiceController {
 
   private void resetTextFields() {
     // clear text fields
-    firstNameField.clear();
-    lastNameField.clear();
-    employeeIDField.clear();
-    emailField.clear();
-    cleanUpLocationField.clear();
-    additionalNotesField.clear();
+    for (TextField t : textFields) t.clear();
   }
 
   private void resetChoiceBoxes() throws IOException {
