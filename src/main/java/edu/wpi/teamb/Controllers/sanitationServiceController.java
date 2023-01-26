@@ -77,8 +77,7 @@ public class sanitationServiceController {
   private void resetChoiceBoxes() throws IOException {
     // clear choices
     // not sure if this function is the right one to clear it yet
-    urgencyBox.valueProperty().set(null);
-    typeOfCleanUpBox.valueProperty().set(null);
+    for (ChoiceBox c : choiceBoxes) c.valueProperty().set(null);
   }
 
   public void helpButtonClicked() throws IOException {
