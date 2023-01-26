@@ -14,7 +14,7 @@ can be found inside this jar file
 
 
 ## Back-End
-<li>integration into front end user interface (in the Database page of the application)
+<li>Integration into front end user interface (in the Database page of the application)
 <li>JDBC program that includes an ORM
 <li>User authentication and authorization (in-progress)
 <li>Ability to interact with and manipulate Nodes in real-time
@@ -24,7 +24,7 @@ can be found inside this jar file
 
 
 ## PathFinding
-<li>integration into front end user interface (in the Pathfinding page of the application)
+<li>Integration into front end user interface (in the Pathfinding page of the application)
 <li>Finds a path between two given locations in the hospital
 <li>Returns the shortest path found as an easy-to-follow string representation
 <li>Locations are represented by their Unique ID
@@ -37,8 +37,7 @@ can be found inside this jar file
 <br>Pathfinding Integration - on the home page, click the Pathfinding Navigation Button to visit the page.
 <br>Exit Application- on any of the navigation pages, click the Profile Icon Navigation Button and then the Exit Application button to Exit Application.
 <br>
-<br>Depth First Search - Navigate to the pathfinding page by clicking the Pathfinding navigation button. Then select a starting node and ending node from the dropdowns
-Then generate a path by clicking the Find Shortest Path Button
+<br>Depth First Search - Navigate to the pathfinding page by clicking the Pathfinding navigation button. Then select a starting node and ending node from the dropdowns. Then generate a path by clicking the Find Shortest Path Button.
 <br>
 <br>View all nodes - Navigate to the database page by clicking on the Database navigation button. Then click on Query Nodes to view the nodes
 <br>View all Edges - Navigate to the database page by clicking on the Database navigation button. Then click on Query Edges to view the nodes
