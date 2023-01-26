@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -13,6 +15,10 @@ public class Controller {
   @FXML private Button homeButton;
   @FXML private BorderPane border;
   @FXML private Button signInButton;
+
+  public void handleKeyPress(KeyEvent event) throws IOException {
+    if (event.getCode().equals(KeyCode.ENTER)) signInButtonClicked();
+  }
 
   public void signInButtonClicked() throws IOException {
     Stage stage = (Stage) signInButton.getScene().getWindow();
