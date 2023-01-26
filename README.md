@@ -11,6 +11,7 @@ can be found inside this jar file
 <li>A user-friendly interface for navigating and interacting with the system
 <li>Forms for inputting data and making requests
 <li>Display and visualization of data and results
+<li>Service Requests update csvfiles located in edu.wpi.teamb.resources.dataScources on submission of service forms
 
 
 ## Back-End
