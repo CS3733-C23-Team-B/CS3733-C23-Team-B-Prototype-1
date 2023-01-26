@@ -16,6 +16,6 @@
       </Label>
       <Label layoutX="300.0" layoutY="140.0" text="Starting Node:" />
       <Label layoutX="303.0" layoutY="183.0" text="Ending Node:" />
-      <Label fx:id="pathLabel" layoutX="230.0" layoutY="271.0" prefHeight="84.0" prefWidth="344.0" wrapText="true" />
+      <Label fx:id="pathLabel" layoutX="230.0" layoutY="271.0" prefHeight="127.0" prefWidth="344.0" wrapText="true" />
    </children>
 </AnchorPane>
