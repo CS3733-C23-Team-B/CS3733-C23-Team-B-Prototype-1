@@ -100,15 +100,14 @@ public class Pathfinding {
     return retStr;
   }
 
-
   /**
    * Finds a path from start to end, by stringing together nodes and edges
+   *
    * @param start the node to start from
    * @param end the node to end at
    * @return a String representation of the optimal path to take
    */
-  public static String getShortestPath(String start, String end)
-  {
+  public static String getShortestPath(String start, String end) {
     return getPathDepth(start, end);
   }
 
