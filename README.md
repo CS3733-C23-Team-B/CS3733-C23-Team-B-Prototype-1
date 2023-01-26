@@ -46,6 +46,6 @@ can be found inside this jar file
 and enter new x and y coordinates in the text fields. Click Submit change button to update the node coordinates.
 <br>Update node Coordinates- Navigate to the database page by clicking on the Database navigation button. Then select a node from the dropdown
 and enter new location in the location text field. Click submit change button to update the node coordinates. 
-<br>
-<br> 
+<br>Sanitation Service Help Page- Click help button on Sanitation Service page to get to the Sanitation Help Page
+<br>Patient Transportation Help Page- Scroll down on Patient transportation Help page, Click help button on Patient Transportation Page to get to Transportation Help Page 
 
