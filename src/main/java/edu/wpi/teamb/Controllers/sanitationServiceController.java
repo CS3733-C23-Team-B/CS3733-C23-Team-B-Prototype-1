@@ -13,26 +13,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
 public class sanitationServiceController {
-  // Lists for choiceboxes
+  // Lists for checkboxes
   ObservableList<String> urgencyList =
       FXCollections.observableArrayList("Low", "Moderate", "High", "Requires Immediate Attention");
   ObservableList<String> typeOfCleanUpList =
       FXCollections.observableArrayList("Bathroom", "Spill", "Vacant Room", "Blood", "Chemicals");
-  /*
-  ObservableList<String> areaOfCleanUpList =
-      FXCollections.observableArrayList(
-          "patient room",
-          "hallway",
-          "bathroom",
-          "cafeteria",
-          "break room",
-          "stock room",
-          "public space",
-          "other");
-   */
-
-  // page attributes from fxml
-  @FXML private BorderPane feature2BorderPane;
   @FXML private TextField firstNameField;
   @FXML private TextField lastNameField;
   @FXML private TextField employeeIDField;
@@ -41,14 +26,12 @@ public class sanitationServiceController {
   @FXML private ChoiceBox urgencyBox;
   @FXML private ChoiceBox typeOfCleanUpBox;
   @FXML private TextField additionalNotesField;
-  @FXML private Button clearButton;
-  @FXML private Button submitButton;
   @FXML private Button helpButton;
   @FXML private Button cancelButton;
 
   @FXML
   public void initialize() {
-    // intialization goes here
+    // initialization goes here
     urgencyBox.setItems(urgencyList);
     typeOfCleanUpBox.setItems(typeOfCleanUpList);
   }
@@ -57,7 +40,7 @@ public class sanitationServiceController {
     // Stuff to handle the clearing of fields goes here
     resetTextFields();
     resetChoiceBoxes();
-  };
+  }
 
   private void resetTextFields() {
     // clear text fields
@@ -84,17 +67,6 @@ public class sanitationServiceController {
     helpButton.getScene().setRoot(root2);
   }
 
-  /*
-   private void helpButtonClicked(ActionEvent event) throws Exception {
-     Parent sanitationHelp =
-         FXMLLoader.load(getClass().getResource("/edu/wpi/teamb/views/sanitationHelpPage.fxml"));
-     Scene scene = new Scene(sanitationHelp);
-     Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-     window.setScene(scene);
-     window.show();
-   }
-  */
-
   public void cancelButtonClicked() throws IOException {
     FXMLLoader loader2 =
         new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
@@ -115,7 +87,7 @@ public class sanitationServiceController {
     String location = cleanUpLocationField.getText();
     String notes = additionalNotesField.getText();
 
-    // retrieve choicebox values
+    // retrieve choice-box values
     String urgency = (String) urgencyBox.getValue();
     String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
 

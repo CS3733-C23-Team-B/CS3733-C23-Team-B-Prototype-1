@@ -72,7 +72,7 @@ public class Controller {
     border.setCenter(root);
   }
 
-  public void exitButtonClicked() throws IOException {
+  public void exitButtonClicked() {
     Stage stage = (Stage) homeButton.getScene().getWindow();
     stage.close();
   }
