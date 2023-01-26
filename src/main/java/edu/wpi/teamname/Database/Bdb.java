@@ -29,16 +29,14 @@ public class Bdb {
   }
 
   public void init() throws SQLException {
-    // if (!tableExists(Thing.getTableName())) {
-    //   Thing.initTable();
-    // }
+
     if (!tableExists(Node.getTableName())) {
       String n = Node.getTableName();
       Node.initTable();
     }
-    // if (!tableExists(Edge.getTableName())) {
-    //  Edge.initTable();
-    // }
+     if (!tableExists(Edge.getTableName())) {
+      Edge.initTable();
+     }
   }
 
   public static PreparedStatement prepareStatement(String s) throws SQLException {
