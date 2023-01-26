@@ -1,7 +1,7 @@
 package edu.wpi.teamb.Controllers;
 
-import edu.wpi.teamb.Pathfinding.Pathfinding;
 import edu.wpi.teamb.Database.Node;
+import edu.wpi.teamb.Pathfinding.Pathfinding;
 import java.sql.SQLException;
 import java.util.Map;
 import javafx.collections.FXCollections;

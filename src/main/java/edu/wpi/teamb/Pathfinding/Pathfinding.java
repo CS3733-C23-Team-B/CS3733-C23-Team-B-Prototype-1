@@ -123,7 +123,7 @@ public class Pathfinding {
 
     while (toExpand.size() > 0) {
 
-      //BREADTH is field that tells program to use breadth-first instead of depth-first
+      // BREADTH is field that tells program to use breadth-first instead of depth-first
       int index = BREADTH ? 0 : toExpand.size() - 1;
       String current = toExpand.remove(index);
 
