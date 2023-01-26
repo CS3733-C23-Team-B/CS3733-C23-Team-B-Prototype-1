@@ -14,7 +14,7 @@ can be found inside this jar file
 
 
 ## Back-End
-<li>integration into front end user interface (in the Database page of the application)
+<li>Integration into front end user interface (in the Database page of the application)
 <li>JDBC program that includes an ORM
 <li>User authentication and authorization (in-progress)
 <li>Ability to interact with and manipulate Nodes in real-time
@@ -24,7 +24,7 @@ can be found inside this jar file
 
 
 ## PathFinding
-<li>integration into front end user interface (in the Pathfinding page of the application)
+<li>Integration into front end user interface (in the Pathfinding page of the application)
 <li>Finds a path between two given locations in the hospital
 <li>Returns the shortest path found as an easy-to-follow string representation
 <li>Locations are represented by their Unique ID
