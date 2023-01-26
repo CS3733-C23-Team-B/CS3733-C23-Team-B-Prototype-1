@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Pathfinding;
+package edu.wpi.teamb.Pathfinding;
 
 public class GraphNode implements Comparable<GraphNode> {
   private String NodeID;

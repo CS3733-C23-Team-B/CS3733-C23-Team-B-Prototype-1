@@ -1,4 +1,4 @@
-package edu.wpi.teamname;
+package edu.wpi.teamb;
 
 import java.io.File;
 import java.io.FileWriter;

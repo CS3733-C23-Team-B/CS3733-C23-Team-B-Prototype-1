@@ -1,4 +1,4 @@
-package edu.wpi.teamname.Database;
+package edu.wpi.teamb.Database;
 
 import java.sql.*;
 
@@ -10,8 +10,6 @@ public class Bdb {
     try {
       db = new Bdb();
       db.init();
-      System.out.println(tableExists("node"));
-      System.out.println(tableExists("edge"));
     } catch (ClassNotFoundException | SQLException e) {
       throw new RuntimeException(e);
     }
@@ -27,15 +25,16 @@ public class Bdb {
   }
 
   public void init() throws SQLException {
-    if (!tableExists(Thing.getTableName())) {
-      Thing.initTable();
-    }
+    // if (!tableExists(Thing.getTableName())) {
+    //   Thing.initTable();
+    // }
     if (!tableExists(Node.getTableName())) {
+      String n = Node.getTableName();
       Node.initTable();
     }
-    if (!tableExists(Edge.getTableName())) {
-      Edge.initTable();
-    }
+    // if (!tableExists(Edge.getTableName())) {
+    //  Edge.initTable();
+    // }
   }
 
   public static PreparedStatement prepareStatement(String s) throws SQLException {
