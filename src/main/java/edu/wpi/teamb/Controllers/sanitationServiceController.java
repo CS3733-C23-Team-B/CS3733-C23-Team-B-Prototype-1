@@ -79,39 +79,22 @@ public class sanitationServiceController {
   public void submitButtonClicked() throws IOException {
     // handle retrieving values and saving
 
-    // retrieve text field values
-    String firstName = firstNameField.getText();
-    String lastName = lastNameField.getText();
-    String employeeID = employeeIDField.getText();
-    String email = emailField.getText();
-    String location = cleanUpLocationField.getText();
-    String notes = additionalNotesField.getText();
+    String[] saveInfo = new String[components.size()];
 
-    // retrieve choice-box values
-    String urgency = (String) urgencyBox.getValue();
-    String typeOfCleanUp = (String) typeOfCleanUpBox.getValue();
+    // Add all input components to the list of data
+    for (int i = 0; i < components.size(); i++) {
+      Control c = components.get(i);
+      if (c instanceof TextField) saveInfo[i] = ((TextField) c).getText();
+      if (c instanceof ChoiceBox) {
+        String s = (String) ((ChoiceBox) c).getValue();
+        if (s == null) s = "None";
+        saveInfo[i] = s;
+      }
+    }
 
     // may need to clear fields can be done with functions made for clear
     resetChoiceBoxes();
     resetTextFields();
-    //     prep for CSV file
-    String saveInfo =
-        firstName
-            + ","
-            + lastName
-            + ","
-            + employeeID
-            + ","
-            + email
-            + ","
-            + location
-            + ","
-            + urgency
-            + ","
-            + typeOfCleanUp
-            + ","
-            + notes
-            + "\n";
     CSVWriter writer = new CSVWriter();
     writer.writeCsv("sanitationService", new String[] {saveInfo});
 
