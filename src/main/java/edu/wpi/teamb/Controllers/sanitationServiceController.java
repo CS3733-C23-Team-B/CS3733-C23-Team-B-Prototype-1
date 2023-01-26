@@ -39,6 +39,26 @@ public class sanitationServiceController {
   @FXML
   public void initialize() {
     // initialization goes here
+  // Create list of components
+    Control[] ctrl = {
+      firstNameField,
+      lastNameField,
+      employeeIDField,
+      emailField,
+      cleanUpLocationField,
+      urgencyBox,
+      typeOfCleanUpBox,
+      additionalNotesField
+    };
+    components = new ArrayList<>(Arrays.asList(ctrl));
+    textFields = new ArrayList<>();
+    choiceBoxes = new ArrayList<>();
+
+    // Create lists of text fields and choice boxes
+    for (Control c : components) {
+      if (c instanceof TextField) textFields.add((TextField) c);
+      if (c instanceof ChoiceBox) choiceBoxes.add((ChoiceBox) c);
+    }
     urgencyBox.setItems(urgencyList);
     typeOfCleanUpBox.setItems(typeOfCleanUpList);
   }
