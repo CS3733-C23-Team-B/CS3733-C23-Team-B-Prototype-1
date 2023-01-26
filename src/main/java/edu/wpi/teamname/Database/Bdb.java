@@ -31,7 +31,6 @@ public class Bdb {
   public void init() throws SQLException {
 
     if (!tableExists(Node.getTableName())) {
-      String n = Node.getTableName();
       Node.initTable();
     }
      if (!tableExists(Edge.getTableName())) {
