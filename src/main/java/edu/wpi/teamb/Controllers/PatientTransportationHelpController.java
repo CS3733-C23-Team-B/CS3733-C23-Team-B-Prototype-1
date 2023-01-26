@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class sanitationHelpController {
+public class PatientTransportationHelpController {
 
   @FXML private Button backButton;
 
@@ -31,7 +31,7 @@ public class sanitationHelpController {
     stage.show();
 
     FXMLLoader homeLoader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationService.fxml"));
+        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/PatientTransportation.fxml"));
     BorderPane border = (BorderPane) root;
     border.setCenter(homeLoader.load());
   }

@@ -1,5 +1,6 @@
 package edu.wpi.teamb.Controllers;
 
+import edu.wpi.teamb.CSVWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -90,7 +91,12 @@ public class PatientTransportationController {
    * @throws IOException
    */
   public void helpButtonClicked() throws IOException {
-    // TODO: stuff to handle help screen
+    FXMLLoader loader =
+        new FXMLLoader(
+            getClass().getResource("/edu/wpi/teamb/views/PatientTransportationHelpPage.fxml"));
+    Parent root = loader.load();
+    root.setId("pane");
+    helpButton.getScene().setRoot(root);
   }
 
   /**
@@ -110,18 +116,21 @@ public class PatientTransportationController {
    * @throws IOException
    */
   public void submitButtonClicked() throws IOException {
-    String[] inputInfo = new String[components.size()];
+    String[] saveInfo = new String[components.size()];
 
     // Add all input components to the list of data
     for (int i = 0; i < components.size(); i++) {
       Control c = components.get(i);
-      if (c instanceof TextField) inputInfo[i] = ((TextField) c).getText();
+      if (c instanceof TextField) saveInfo[i] = ((TextField) c).getText();
       if (c instanceof ChoiceBox) {
         String s = (String) ((ChoiceBox) c).getValue();
         if (s == null) s = "None";
-        inputInfo[i] = s;
+        saveInfo[i] = s;
       }
     }
-    // TODO: save to CSV, return to home screen or show confirmation page
+
+    CSVWriter.writeCsv("patientTransportationRequests", saveInfo);
+    clearButtonClicked();
+    // TODO: show confirmation page
   }
 }
