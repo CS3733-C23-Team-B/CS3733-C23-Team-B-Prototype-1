@@ -20,9 +20,9 @@ public class Pathfinding {
 
   public static void main(String[] args) {
     System.out.println("\n");
-    System.out.println(getShortestPath("CCONF001L1", "CREST004L1"));
+    System.out.println(getPathDepth("CCONF001L1", "CREST004L1"));
     System.out.println("\n");
-    System.out.println(getShortestPathA("CCONF001L1", "CREST004L1"));
+    System.out.println(getPathAStar("CCONF001L1", "CREST004L1"));
   }
 
   /**
@@ -100,6 +100,18 @@ public class Pathfinding {
     return retStr;
   }
 
+
+  /**
+   * Finds a path from start to end, by stringing together nodes and edges
+   * @param start the node to start from
+   * @param end the node to end at
+   * @return a String representation of the optimal path to take
+   */
+  public static String getShortestPath(String start, String end)
+  {
+    return getPathDepth(start, end);
+  }
+
   /**
    * Finds a path from start to end using depth/breadth-first search
    *
@@ -107,7 +119,7 @@ public class Pathfinding {
    * @param end the node to end at
    * @return a String representation of the path taken
    */
-  public static String getShortestPath(String start, String end) {
+  private static String getPathDepth(String start, String end) {
     boolean done = false;
     HashMap<String, String> cameFrom = new HashMap<String, String>();
 
@@ -158,7 +170,7 @@ public class Pathfinding {
    * @param end the node to end at
    * @return a String representation of the path taken
    */
-  private static String getShortestPathA(String start, String end) {
+  private static String getPathAStar(String start, String end) {
     PriorityQueue<GraphNode> queue = new PriorityQueue<GraphNode>();
     queue.add(new GraphNode(start, 0));
 
