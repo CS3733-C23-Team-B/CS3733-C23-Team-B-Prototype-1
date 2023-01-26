@@ -1,8 +1,7 @@
 package edu.wpi.teamb.Controllers;
 
-import static edu.wpi.teamb.Pathfinding.Pathfinding.getShortestPath;
-
 import edu.wpi.teamb.Database.Node;
+import edu.wpi.teamb.Pathfinding.Pathfinding;
 import java.sql.SQLException;
 import java.util.Map;
 import javafx.collections.FXCollections;
@@ -34,7 +33,7 @@ public class PathfindingController {
     }
     Node start = nodes.get(startNode.getValue());
     Node end = nodes.get(endNode.getValue());
-    String path = getShortestPath(start.getID(), end.getID());
+    String path = Pathfinding.getShortestPath(start.getID(), end.getID());
     pathLabel.setText("Path: " + path);
   }
 

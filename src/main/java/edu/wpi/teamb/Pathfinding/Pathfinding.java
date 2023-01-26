@@ -9,6 +9,8 @@ public class Pathfinding {
   private static List<Edge> edges;
   private static Map<String, Node> nodes;
 
+  private static final boolean BREADTH = true;
+
   static {
     try {
       edges = Edge.getAll();
@@ -94,13 +96,25 @@ public class Pathfinding {
   }
 
   /**
+   * Finds a path from start to end, by stringing together nodes and edges
+   *
+   * @param start the node to start from
+   * @param end the node to end at
+   * @return a String representation of the optimal path to take
+   */
+  public static String getShortestPath(String start, String end) {
+    return getPathDepth(start, end);
+  }
+
+  /**
    * Finds a path from start to end using depth/breadth-first search
    *
    * @param start the node to start from
    * @param end the node to end at
    * @return a String representation of the path taken
    */
-  public static String getShortestPath(String start, String end) {
+  private static String getPathDepth(String start, String end) {
+
     boolean done = false;
     HashMap<String, String> cameFrom = new HashMap<String, String>();
 
@@ -109,10 +123,9 @@ public class Pathfinding {
 
     while (toExpand.size() > 0) {
 
-      // Breadth-first:
-      String current = toExpand.remove(0);
-      // Depth-first:
-      // String current = toExpand.remove(toExpand.size() - 1);
+      // BREADTH is field that tells program to use breadth-first instead of depth-first
+      int index = BREADTH ? 0 : toExpand.size() - 1;
+      String current = toExpand.remove(index);
 
       ArrayList<String> directPaths = getDirectPaths(current);
       for (String path : directPaths) {
@@ -151,7 +164,7 @@ public class Pathfinding {
    * @param end the node to end at
    * @return a String representation of the path taken
    */
-  private static String getShortestPathA(String start, String end) {
+  private static String getPathAStar(String start, String end) {
     PriorityQueue<GraphNode> queue = new PriorityQueue<GraphNode>();
     queue.add(new GraphNode(start, 0));
 
