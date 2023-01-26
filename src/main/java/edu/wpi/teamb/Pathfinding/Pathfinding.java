@@ -9,6 +9,8 @@ public class Pathfinding {
   private static List<Edge> edges;
   private static Map<String, Node> nodes;
 
+  private static final boolean BREADTH = true;
+
   static {
     try {
       edges = Edge.getAll();
@@ -112,6 +114,7 @@ public class Pathfinding {
    * @return a String representation of the path taken
    */
   private static String getPathDepth(String start, String end) {
+
     boolean done = false;
     HashMap<String, String> cameFrom = new HashMap<String, String>();
 
@@ -120,10 +123,9 @@ public class Pathfinding {
 
     while (toExpand.size() > 0) {
 
-      // Breadth-first:
-      String current = toExpand.remove(0);
-      // Depth-first:
-      // String current = toExpand.remove(toExpand.size() - 1);
+      //BREADTH is field that tells program to use breadth-first instead of depth-first
+      int index = BREADTH ? 0 : toExpand.size() - 1;
+      String current = toExpand.remove(index);
 
       ArrayList<String> directPaths = getDirectPaths(current);
       for (String path : directPaths) {
