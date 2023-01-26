@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class csvWriter {
+public class CSVWriter {
   /**
    * Writes the given data to a CSV with the provided name,
    * escaping commas, quotation marks, and newlines.
