@@ -6,8 +6,9 @@ import java.io.IOException;
 
 public class CSVWriter {
   /**
-   * Writes the given data to a CSV with the provided name,
-   * escaping commas, quotation marks, and newlines.
+   * Writes the given data to a CSV with the provided name, escaping commas, quotation marks, and
+   * newlines.
+   *
    * @param fileName the name of the CSV
    * @param data an array of Strings, each being one "cell"
    * @throws IOException
@@ -21,6 +22,7 @@ public class CSVWriter {
 
   /**
    * Converts a list of Strings to one String in CSV format
+   *
    * @param data the list of String values
    * @return a String of comma-separated values
    */

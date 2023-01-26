@@ -1,6 +1,6 @@
 package edu.wpi.teamb.Controllers;
 
-import edu.wpi.teamb.csvWriter;
+import edu.wpi.teamb.CSVWriter;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -140,8 +140,8 @@ public class sanitationServiceController {
             + ","
             + notes
             + "\n";
-    csvWriter writer = new csvWriter();
-    writer.writeCsv("sanitationService", saveInfo);
+    CSVWriter writer = new CSVWriter();
+    writer.writeCsv("sanitationService", new String[] {saveInfo});
 
     //    System.out.println(saveInfo);
     //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
