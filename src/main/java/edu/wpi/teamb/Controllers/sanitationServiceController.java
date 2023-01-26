@@ -2,6 +2,8 @@ package edu.wpi.teamb.Controllers;
 
 import edu.wpi.teamb.CSVWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
