@@ -35,11 +35,11 @@ public class sanitationServiceController {
   private ArrayList<Control> components;
   private ArrayList<TextField> textFields;
   private ArrayList<ChoiceBox> choiceBoxes;
-  
+
   @FXML
   public void initialize() {
     // initialization goes here
-  // Create list of components
+    // Create list of components
     Control[] ctrl = {
       firstNameField,
       lastNameField,
@@ -116,13 +116,6 @@ public class sanitationServiceController {
     // may need to clear fields can be done with functions made for clear
     resetChoiceBoxes();
     resetTextFields();
-    CSVWriter writer = new CSVWriter();
-    writer.writeCsv("sanitationService", new String[] {saveInfo});
-
-    //    System.out.println(saveInfo);
-    //    String[] saveInfo = {firstName, lastName, employeeID, email, location, urgency,
-    // typeOfCleanUp, notes};
-    // save this to csv
-
+    CSVWriter.writeCsv("sanitationServiceCSV", saveInfo);
   }
 }
