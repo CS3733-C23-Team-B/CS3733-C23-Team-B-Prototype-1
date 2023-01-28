@@ -1,13 +1,14 @@
 package edu.wpi.teamb.Controllers;
 
+import edu.wpi.teamb.Bapp;
 import edu.wpi.teamb.Database.Login;
+import edu.wpi.teamb.Navigation.Navigation;
+import edu.wpi.teamb.Navigation.Screen;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Map;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -62,61 +63,37 @@ public class Controller {
 
   public void signInButtonClicked() throws IOException, SQLException {
     if (!validateLogin()) return;
-    Stage stage = (Stage) signInButton.getScene().getWindow();
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Navigation.fxml"));
-    Parent root = loader.load();
-    root.setId("pane");
-    Scene scene = new Scene(root, 800, 600);
-    scene.getStylesheets().addAll(this.getClass().getResource("/css/style.css").toExternalForm());
-    // locking the stage size
-    stage.setMinHeight(600);
-    stage.setMinWidth(800);
-    stage.setMaxHeight(600);
-    stage.setMaxWidth(800);
+    final String filename = Screen.NAVIGATION.getFilename();
 
-    stage.setScene(scene);
-    stage.show();
+    try {
+      final var resource = Bapp.class.getResource(filename);
+      final FXMLLoader loader = new FXMLLoader(resource);
 
-    FXMLLoader homeLoader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
-    border = (BorderPane) root;
-    border.setCenter(homeLoader.load());
+      Bapp.getRootPane().setTop(loader.load());
+    } catch (IOException | NullPointerException e) {
+      e.printStackTrace();
+    }
+    Navigation.navigate(Screen.HOME);
   }
 
   public void featureOneButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/PatientTransportation.fxml"));
-    Parent root = loader.load();
-    border.setCenter(root);
+    Navigation.navigate(Screen.PATIENT_TRANSPORTATION);
   }
 
   public void featureTwoButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationService.fxml"));
-    Parent root = loader.load();
-    border.setCenter(root);
+    Navigation.navigate(Screen.SANITATION);
   }
 
   public void pathfindingClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/Pathfinding.fxml"));
-    Parent root = loader.load();
-    border.setCenter(root);
+    Navigation.navigate(Screen.PATHFINDING);
   }
 
   public void homeButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
-    Parent root = loader.load();
-    border.setCenter(root);
+    Navigation.navigate(Screen.HOME);
   }
 
   public void databaseButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
-    Parent root = loader.load();
-    border.setCenter(root);
+    Navigation.navigate(Screen.DATABASE_UI);
   }
 
   public void exitButtonClicked() {
