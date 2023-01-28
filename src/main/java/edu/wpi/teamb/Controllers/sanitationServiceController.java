@@ -1,19 +1,18 @@
 package edu.wpi.teamb.Controllers;
 
 import edu.wpi.teamb.CSVWriter;
+import edu.wpi.teamb.Navigation.Navigation;
+import edu.wpi.teamb.Navigation.Screen;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 
 public class sanitationServiceController {
   // Lists for checkboxes
@@ -81,19 +80,11 @@ public class sanitationServiceController {
   }
 
   public void helpButtonClicked() throws IOException {
-    FXMLLoader loader2 =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/sanitationHelpPage.fxml"));
-    Parent root2 = loader2.load();
-    root2.setId("pane");
-    helpButton.getScene().setRoot(root2);
+    Navigation.navigate(Screen.SANITATION_HELP);
   }
 
   public void cancelButtonClicked() throws IOException {
-    FXMLLoader loader2 =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
-    Parent root2 = loader2.load();
-    BorderPane b = (BorderPane) cancelButton.getScene().getRoot();
-    b.setCenter(root2);
+    Navigation.navigate(Screen.HOME);
   }
 
   @FXML

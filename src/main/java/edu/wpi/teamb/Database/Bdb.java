@@ -32,9 +32,14 @@ public class Bdb {
       String n = Node.getTableName();
       Node.initTable();
     }
-    // if (!tableExists(Edge.getTableName())) {
-    //  Edge.initTable();
-    // }
+
+    if (!tableExists(Edge.getTableName())) {
+      Edge.initTable();
+    }
+
+    if (!tableExists(Login.getTableName())) {
+      Login.initTable();
+    }
   }
 
   public static PreparedStatement prepareStatement(String s) throws SQLException {

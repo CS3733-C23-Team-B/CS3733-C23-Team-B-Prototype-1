@@ -1,19 +1,18 @@
 package edu.wpi.teamb.Controllers;
 
 import edu.wpi.teamb.CSVWriter;
+import edu.wpi.teamb.Navigation.Navigation;
+import edu.wpi.teamb.Navigation.Screen;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 
 public class PatientTransportationController {
   @FXML private TextField firstName;
@@ -78,11 +77,7 @@ public class PatientTransportationController {
    * @throws IOException
    */
   public void cancelButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/HomeScreen.fxml"));
-    Parent root = loader.load();
-    BorderPane b = (BorderPane) cancelButton.getScene().getRoot();
-    b.setCenter(root);
+    Navigation.navigate(Screen.HOME);
   }
 
   /**
@@ -91,12 +86,7 @@ public class PatientTransportationController {
    * @throws IOException
    */
   public void helpButtonClicked() throws IOException {
-    FXMLLoader loader =
-        new FXMLLoader(
-            getClass().getResource("/edu/wpi/teamb/views/PatientTransportationHelpPage.fxml"));
-    Parent root = loader.load();
-    root.setId("pane");
-    helpButton.getScene().setRoot(root);
+    Navigation.navigate(Screen.PATIENT_TRANSPORTATION_HELP);
   }
 
   /**

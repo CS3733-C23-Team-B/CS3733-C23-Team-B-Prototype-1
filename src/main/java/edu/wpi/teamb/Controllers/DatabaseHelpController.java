@@ -1,11 +1,9 @@
 package edu.wpi.teamb.Controllers;
 
-import java.io.IOException;
+import edu.wpi.teamb.Navigation.Navigation;
+import edu.wpi.teamb.Navigation.Screen;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 
 public class DatabaseHelpController {
 
@@ -16,15 +14,6 @@ public class DatabaseHelpController {
   }
 
   private void backToScene() {
-    BorderPane b = (BorderPane) backButton.getScene().getRoot();
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
-    Parent root;
-    try {
-      root = loader.load();
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
-    }
-    b.setCenter(root);
+    Navigation.navigate(Screen.DATABASE_UI);
   }
 }

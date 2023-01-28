@@ -2,6 +2,8 @@ package edu.wpi.teamb.Controllers;
 
 import edu.wpi.teamb.Database.Edge;
 import edu.wpi.teamb.Database.Node;
+import edu.wpi.teamb.Navigation.Navigation;
+import edu.wpi.teamb.Navigation.Screen;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -9,8 +11,6 @@ import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -76,16 +76,7 @@ public class DatabaseController {
   }
 
   private void changeToHelp() {
-    BorderPane border = (BorderPane) dataHelp.getScene().getRoot();
-    FXMLLoader loader =
-        new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseHelp.fxml"));
-    Parent root;
-    try {
-      root = loader.load();
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
-    }
-    border.setCenter(root);
+    Navigation.navigate(Screen.DATABASE_HELP);
   }
 
   private void changeLocation() throws SQLException {
@@ -123,16 +114,7 @@ public class DatabaseController {
     bor.setCenter(nodeBox);
     Button b = new Button();
     b.setText("Back");
-    b.setOnAction(
-        e -> {
-          FXMLLoader loader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
-          try {
-            bor.setCenter(loader.load());
-          } catch (IOException ex) {
-            throw new RuntimeException(ex);
-          }
-        });
+    b.setOnAction(e -> Navigation.navigate(Screen.DATABASE_UI));
     nodeBox.getChildren().add(b);
   }
 
@@ -168,16 +150,7 @@ public class DatabaseController {
     bor.setCenter(edgeBox);
     Button b = new Button();
     b.setText("Back");
-    b.setOnAction(
-        e -> {
-          FXMLLoader loader =
-              new FXMLLoader(getClass().getResource("/edu/wpi/teamb/views/DatabaseUI.fxml"));
-          try {
-            bor.setCenter(loader.load());
-          } catch (IOException ex) {
-            throw new RuntimeException(ex);
-          }
-        });
+    b.setOnAction(e -> Navigation.navigate(Screen.DATABASE_UI));
     edgeBox.getChildren().add(b);
   }
 }
